@@ -12,7 +12,7 @@ module Pennylane
   class Error < StandardError; end
   class AuthenticationError < Error; end
   class ConfigurationError < Error; end
-
+  class NotFoundError < Error; end
 
   @config = Pennylane::Configuration.new
   # So we can have a module Pennylane that can be a class as well Pennylane.api_key = '1234'

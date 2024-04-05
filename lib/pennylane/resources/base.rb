@@ -26,6 +26,8 @@ module Pennylane
           case resp.code
           when 401
             raise Pennylane::AuthenticationError, resp.body
+          when 404
+            raise Pennylane::NotFoundError
           else
             raise Pennylane::Error, resp.parsed_response['message'] || resp.parsed_response['error']
           end
