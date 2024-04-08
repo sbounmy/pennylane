@@ -2,6 +2,9 @@
 
 require_relative "pennylane/version"
 require 'pennylane/configuration'
+require 'pennylane/object'
+require 'pennylane/list_object'
+require 'pennylane/util'
 require 'httparty'
 require 'ostruct'
 

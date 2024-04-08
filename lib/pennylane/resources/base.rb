@@ -1,13 +1,13 @@
 module Pennylane
   module Resources
-    class Base
+    class Base < Pennylane::Object
       include HTTParty
       base_uri 'app.pennylane.com/api/external'
 
       class << self
         def request_pennylane_object(method:, path:, params:, opts: {}, usage: [])
           resp, opts = execute_resource_request(method, path, params, opts, usage)
-          # Util.convert_to_pennylane_object_with_params(resp.data, params, opts)
+          Util.convert_to_pennylane_object(resp, params, opts)
         end
 
         def execute_resource_request(method, url, params = {}, opts = {}, usage = [])
@@ -17,7 +17,19 @@ module Pennylane
 
           handle_error_response(resp) if should_handle_as_error?(resp.code)
 
-          JSON.parse(resp.body, object_class: OpenStruct)
+          [resp.parsed_response, opts]
+        end
+
+        def descendant_names
+          {}.tap do |h|
+            puts descendants.inspect
+            descendants.reject {|d| d.name.nil? } # reject eigten classes
+                       .each { |descendant| h[descendant.name.split('::').last.downcase] = descendant }
+          end
+        end
+
+        def descendants
+          ObjectSpace.each_object(Class).select { |klass| klass < self }
         end
 
         private
@@ -36,6 +48,7 @@ module Pennylane
         def should_handle_as_error?(code)
           code >= 400
         end
+
       end
     end
   end

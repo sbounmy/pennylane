@@ -9,8 +9,7 @@ class CustomerTest < Test::Unit::TestCase
   class ListTest < CustomerTest
     test "#list" do
       customers = Pennylane::Customer.list
-      assert_equal 13, customers['customers'].count
-      assert_equal 13, customers.customers.count
+      assert_equal 13, customers.count
     end
 
     test 'without api key raises error'  do
@@ -27,9 +26,9 @@ class CustomerTest < Test::Unit::TestCase
     end
 
     test 'accepts filter' do
-      customers = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'LUCKYSPACE'}].to_json)
-      assert_equal 1, customers.customers.count
-      assert_equal "LUCKYSPACE", customers.customers[0].name
+      list = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'LUCKYSPACE'}].to_json)
+      assert_equal 1, list.customers.count
+      assert_equal "LUCKYSPACE", list.customers[0].name
     end
   end
 
@@ -43,7 +42,6 @@ class CustomerTest < Test::Unit::TestCase
 
     test "return object when found" do
       cus = Pennylane::Customer.retrieve('d9add8c6-3520-41a3-99c8-f54da7dd4d11')
-      puts cus.inspect
       assert_equal 'LUCKYSPACE', cus.customer.name
     end
   end

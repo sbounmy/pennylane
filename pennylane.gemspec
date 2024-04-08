@@ -35,6 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "test-unit", "~> 3.6"
   spec.add_development_dependency "minitest", "~> 5.22"
   spec.add_dependency "httparty", "~> 0.21.0"
-  # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
 end

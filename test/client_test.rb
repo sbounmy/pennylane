@@ -6,7 +6,7 @@
 #   end
 #
 #   test "#initialize" do
-#     Stripe.api_key = 'sk_test_123'
+#     Pennylane.api_key = 'sk_test_123'
 #     client = Pennylane::Client.new
 #   end
 # end
