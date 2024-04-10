@@ -2,25 +2,17 @@ module Pennylane
   class Util
 
     class << self
-      def convert_to_pennylane_object(resp, object_name=nil, params={}, opts={})
-        object_name ||= key_for(resp)
-        if resp.has_key? 'total_pages'
-          # convert list items to existing Resource object, if none Generic Pennylane::Object is initialized
-          resp[object_name] = resp[object_name].map { |i| convert_to_pennylane_object(i, singularize(object_name), params, opts) }
-          puts convert_to_pennylane_object(resp[Util.key_for(resp)][0], {}, {}).inspect
-          Pennylane::ListObject.build_from(resp, params, opts)
-        else
-          # key = key_for(resp)
-          object_resp = resp[object_name] || resp
-          case
-          # when Array
-          #   Pennylane::ListObject.build_from(resp[key].map { |i| convert_to_pennylane_object(i, params, opts) })
-          when Hash
-            Pennylane::Resources::Base.descendant_names.fetch(object_name).build_from(object_resp, params, opts)
-          else
-            resp
+      def convert_to_pennylane_object(resp, params={}, opts={})
+        case resp
+        when Array
+          resp.map { |value| convert_to_pennylane_object(value, params, opts) }
+        when Hash
+          resp.each do |key, value|
+            resp[key] = convert_to_pennylane_object(value, params, opts)
           end
-
+          klass_for(resp['_object']).build_from(resp, params, opts)
+        else
+          resp
         end
       end
 
@@ -75,6 +67,11 @@ module Pennylane
         end
       end
 
+      def klass_for(object)
+        Pennylane::API_RESOURCES[singularize(object)] || Pennylane::Object
+      rescue
+        Pennylane::Object
+      end
       def key_for(resp)
         resp.keys.find { |k| Resources::Base.descendant_names.keys.include?(singularize(k.to_s)) } || resp.keys.find { |k| resp[k].is_a? Array }
       end

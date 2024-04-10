@@ -22,6 +22,18 @@ module Pennylane
       new(response['id']).initialize_from_response(response, params, opts)
     end
 
+    def self.objects
+      {}.tap do |h|
+        descendants.each do |klass|
+          h[klass.object_name] = klass
+        end
+      end
+    end
+
+    def self.descendants
+      ObjectSpace.each_object(Class).select { |klass| klass < self && respond_to?(:object_name) }
+    end
+
     # Eigenclass to define methods on the specific class
     protected def metaclass
       class << self; self; end

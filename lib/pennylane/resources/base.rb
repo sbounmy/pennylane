@@ -5,8 +5,9 @@ module Pennylane
       base_uri 'app.pennylane.com/api/external'
 
       class << self
+
         def object_name
-          name.split('::').last.downcase
+          name&.split('::')&.last&.downcase
         end
 
         def object_name_plural
@@ -15,7 +16,7 @@ module Pennylane
 
         def request_pennylane_object(method:, path:, params:, opts: {}, usage: [])
           resp, opts = execute_resource_request(method, path, params, opts, usage)
-          convert_to_pennylane_object(resp, params, opts)
+          convert_to_pennylane_object(Util.normalize_response(resp), params, opts)
         end
 
         def execute_resource_request(method, url, params = {}, opts = {}, usage = [])
@@ -26,18 +27,6 @@ module Pennylane
           handle_error_response(resp) if should_handle_as_error?(resp.code)
 
           [resp.parsed_response, opts]
-        end
-
-        def descendant_names
-          {}.tap do |h|
-            puts descendants.inspect
-            descendants.reject {|d| d.name.nil? } # reject eigten classes
-                       .each { |descendant| h[descendant.name.split('::').last.downcase] = descendant }
-          end
-        end
-
-        def descendants
-          ObjectSpace.each_object(Class).select { |klass| klass < self }
         end
 
         def convert_to_pennylane_object(resp, params={}, opts={})

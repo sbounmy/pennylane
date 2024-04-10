@@ -2,6 +2,10 @@ module Pennylane
   class ListObject < Pennylane::Object
     include Enumerable
 
+    def self.object_name
+      'list'
+    end
+
     def self.build_from(response, params = {}, opts = {})
       new.initialize_from_response(response)
     end

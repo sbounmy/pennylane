@@ -17,6 +17,12 @@ module Pennylane
   class ConfigurationError < Error; end
   class NotFoundError < Error; end
 
+  API_RESOURCES = {
+    ListObject.object_name => ListObject,
+    Customer.object_name => Customer
+  }.freeze
+
+
   @config = Pennylane::Configuration.new
   # So we can have a module Pennylane that can be a class as well Pennylane.api_key = '1234'
   class << self

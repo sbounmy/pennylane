@@ -8,17 +8,22 @@ module Pennylane
     end
     class ConvertToPennylaneObjectTest < UtilTest
       test "turn list to ListObjects" do
-        obj = Util.convert_to_pennylane_object({'total_pages' => 1, 'customers' => [{'name' => 'LUCKYSPACE'}]})
+        obj = Util.convert_to_pennylane_object({'total_pages' => 1, '_object' => 'list', 'customers' => [{'name' => 'LUCKYSPACE', '_object' => 'customer'}]})
         assert obj.is_a? Pennylane::ListObject
       end
 
       test 'turn object to PennylaneObject'  do
-        obj = Util.convert_to_pennylane_object({'customer' => {'name' => 'LUCKYSPACE'}, 'some_other_key' => 'value'})
+        obj = Util.convert_to_pennylane_object({'customer' => {'name' => 'LUCKYSPACE', '_object' => 'customer'}, 'some_other_key' => 'value', '_object' => 'customer'})
         assert obj.is_a? Pennylane::Customer
       end
 
+      test 'faillback to Object when missing object'  do
+        obj = Util.convert_to_pennylane_object({'customer' => {'name' => 'LUCKYSPACE'}})
+        assert obj.is_a? Pennylane::Object
+      end
+
       test 'turn array items to PennylaneObject'  do
-        obj = Util.convert_to_pennylane_object({'total_pages' => 1, 'customers' => [{'name' => 'LUCKYSPACE'}]})
+        obj = Util.convert_to_pennylane_object({'total_pages' => 1, '_object' => 'list', 'customers' => [{'name' => 'LUCKYSPACE', '_object' => 'customer' }]})
         assert obj.customers[0].is_a? Pennylane::Customer
         assert_equal 'LUCKYSPACE', obj.customers[0].name
       end
@@ -63,23 +68,5 @@ module Pennylane
       end
     end
 
-    class KeyFor < UtilTest
-      test 'return the resource key plural' do
-        obj = {'total_pages' => 1, 'customers' => [{'name' => 'LUCKYSPACE'}]}
-        assert_equal 'customers', Util.key_for(obj)
-      end
-
-      test 'return the resource key' do
-        obj = {'total_pages' => 1, 'customer' => {'name' => 'LUCKYSPACE'}}
-        assert_equal 'customer', Util.key_for(obj)
-      end
-
-      test 'return the resource key even if resource is not defined' do
-        omit 'todo'
-        obj = {'total_pages' => 1, 'anyobject' => {'name' => 'LUCKYSPACE'}}
-        assert_equal 'anyboject', Util.key_for(obj)
-      end
-
-    end
   end
 end
