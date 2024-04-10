@@ -16,7 +16,7 @@ module Pennylane
 
         def request_pennylane_object(method:, path:, params:, opts: {}, usage: [])
           resp, opts = execute_resource_request(method, path, params, opts, usage)
-          convert_to_pennylane_object(Util.normalize_response(resp), params, opts)
+          Util.convert_to_pennylane_object(Util.normalize_response(resp), params, opts)
         end
 
         def execute_resource_request(method, url, params = {}, opts = {}, usage = [])
@@ -27,26 +27,6 @@ module Pennylane
           handle_error_response(resp) if should_handle_as_error?(resp.code)
 
           [resp.parsed_response, opts]
-        end
-
-        def convert_to_pennylane_object(resp, params={}, opts={})
-          if resp.has_key? 'total_pages'
-            # convert list items to existing Resource object, if none Generic Pennylane::Object is initialized
-            resp[object_name_plural] = resp[object_name_plural].map { |i| convert_to_pennylane_object(i, params, opts) }
-            puts convert_to_pennylane_object(resp[object_name_plural][0], {}, {}).inspect
-            Pennylane::ListObject.build_from(resp, params, opts)
-          else
-            case resp[object_name]
-              # when Array
-              #   Pennylane::ListObject.build_from(resp[key].map { |i| convert_to_pennylane_object(i, params, opts) })
-            when Hash
-              puts self.class.name
-              build_from(resp[object_name], params, opts)
-            else
-              resp
-            end
-
-          end
         end
 
         private
