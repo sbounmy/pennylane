@@ -28,6 +28,7 @@ class CustomerTest < Test::Unit::TestCase
     test 'accepts filter' do
       list = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'LUCKYSPACE'}].to_json)
       assert_equal 1, list.customers.count
+      puts list.customers.inspect
       assert_equal "LUCKYSPACE", list.customers[0].name
     end
   end
