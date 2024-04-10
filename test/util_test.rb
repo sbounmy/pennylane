@@ -55,16 +55,28 @@ module Pennylane
       end
 
       test 'inject object name when nested item'  do
-        obj = Util.normalize_response({'customer' => {'name' => 'LUCKYSPACE', 'billing_address' => { 'address' => 'Paris'}}, 'some_other_key' => 'value'})
+        obj = Util.normalize_response({'customer' => {'name' => 'LUCKYSPACE', 'billing_address' => { 'address' => 'Paris'} }, 'some_other_key' => 'value'})
         assert_equal 'customer', obj['_object']
         assert_equal 'customer', obj['customer']['_object']
         assert_equal 'billing_address', obj['customer']['billing_address']['_object']
+      end
+
+      test 'inject object name when deep nested item'  do
+        obj = Util.normalize_response({'customer' => {'name' => 'LUCKYSPACE', 'billing_address' => { 'address' => 'Paris', 'customer' => {'name' => 'test'}} }, 'some_other_key' => 'value'})
+        assert_equal 'billing_address', obj['customer']['billing_address']['_object']
+        assert_equal 'customer', obj['customer']['billing_address']['customer']['_object']
       end
 
       test 'fallbacks to object if not a defined class'  do
         obj = Util.normalize_response({'total_pages' => 1, 'some-objects' => [{'name' => 'LUCKYSPACE'}]})
         assert_equal 'list', obj['_object']
         assert_equal 'some-object', obj['some-objects'][0]['_object']
+      end
+
+      test 'does not add _object to array of string'  do
+        obj = Util.normalize_response({'total_pages' => 1, 'emails' => ['test@gmail.com']})
+        assert_equal 'list', obj['_object']
+        assert_equal ['test@gmail.com'], obj['emails']
       end
     end
 

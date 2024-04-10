@@ -21,6 +21,7 @@ module Pennylane
       # This key will contain the name of the object
       # It will also add an _object key to the root of the response
       def normalize_response(object)
+        # puts object.inspect
         case object
         when Hash
           new_hash = {}
@@ -28,8 +29,9 @@ module Pennylane
 
           object.each do |key, value|
             if value.is_a? Array
-              value.each do |h|
-                h['_object'] = singularize(key)
+              new_hash[key] = value.map do |h|
+                h['_object'] = singularize(key) if h.is_a? Hash
+                normalize_response(h)
               end
             elsif value.is_a? Hash
               value['_object'] = singularize(key)
