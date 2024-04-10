@@ -74,9 +74,6 @@ module Pennylane
       rescue
         Pennylane::Object
       end
-      def key_for(resp)
-        resp.keys.find { |k| Resources::Base.descendant_names.keys.include?(singularize(k.to_s)) } || resp.keys.find { |k| resp[k].is_a? Array }
-      end
 
       # We define our own singularize method because the ActiveSupport one is too heavy for this use case
       def singularize(word)

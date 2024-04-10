@@ -15,7 +15,12 @@ module Pennylane
     end
 
     def data
-      @values[Util.key_for(@values)]
+      @values[key_for(@values)]
     end
+
+    def key_for(resp)
+      resp.keys.find { |k| Pennylane::API_RESOURCES.keys.include?(Util.singularize(k.to_s)) } || resp.keys.find { |k| resp[k].is_a? Array }
+    end
+
   end
 end
