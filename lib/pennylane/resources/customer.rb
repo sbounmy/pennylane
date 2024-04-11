@@ -11,5 +11,6 @@ module Pennylane
         request_pennylane_object(method: :get, path: "/v1/customers/#{customer_id}", params: {}, opts: opts)
       end
     end
+
   end
 end
