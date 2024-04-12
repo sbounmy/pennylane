@@ -14,6 +14,13 @@ class Pennylane::ClientTest < Test::Unit::TestCase
       assert obj['total_customers'] > 19
     end
 
+    test "works on get with params" do
+      resp = client.request(:get, '/customers', body: { page: 2 })
+
+      obj = JSON.parse(resp.read_body)
+      assert_equal 2, obj['current_page']
+    end
+
     test "works on post" do
       customer_params = { customer_type: 'company', name: 'Tesla', address: '4 rue du faubourg', postal_code: '75008', city: 'Paris', country_alpha2: 'FR' }
       resp = client.request(:post, '/customers', body: { customer: customer_params }

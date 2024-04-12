@@ -1,6 +1,6 @@
 module Pennylane
   class Client
-    BASE_URI = 'app.pennylane.com/api/external/'.freeze
+    BASE_URI = 'app.pennylane.com/api/external'.freeze
     VERSION = 'v1'.freeze
 
     attr_accessor :key, :version
@@ -9,8 +9,11 @@ module Pennylane
       @key = key
       @version = version
     end
-    def url(path)
-      "https://#{BASE_URI}/#{VERSION}/#{path}"
+
+    def url(path, query={})
+      URI("https://#{BASE_URI}/#{VERSION}#{path}").tap do |uri|
+        uri.query = URI.encode_www_form(query) if query
+      end
     end
 
     def base_uri
@@ -31,11 +34,11 @@ module Pennylane
       Net::HTTP.const_get(method.to_s.capitalize)
     end
 
-    def request method, path, params = {}, opts = {}
-      req = initialize_request(method, path).tap do |req|
-        req.body = params[:body].to_json if params[:body]
+    def request method, path, params:, opts: {}
+      req = initialize_request(method, path, params[:query]).tap do |req|
+        req.body = params[:body].to_json if params[:body] && method != :get
+        # req.query = params if !params.empty? && method == :get
       end
-
 
       http.request(req).tap do |resp|
         handle_error_response(resp) if should_handle_as_error?(resp.code)
@@ -52,15 +55,15 @@ module Pennylane
         raise Pennylane::NotFoundError
       else
         error = JSON.parse(resp.read_body)
-        raise Pennylane::Error, "#{resp.code} - #{resp.error['message'] || resp.error['error']}"
+        raise Pennylane::Error, "#{resp.code} - #{error['message'] || error['error']}"
       end
     end
 
     def should_handle_as_error?(code)
       code.to_i >= 400
     end
-    def initialize_request method=nil, path=nil
-      klass(method).new(url(path)).tap do |request|
+    def initialize_request method=nil, path=nil, params={}
+      klass(method).new(url(path, params)).tap do |request|
         request["content-type"] = 'application/json'
         request["authorization"] = authorization
       end
