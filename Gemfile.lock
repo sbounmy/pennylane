@@ -2,20 +2,14 @@ PATH
   remote: .
   specs:
     pennylane (0.1.0)
-      httparty (~> 0.21.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    httparty (0.21.0)
-      mini_mime (>= 1.0.0)
-      multi_xml (>= 0.5.2)
     json (2.7.2)
     language_server-protocol (3.17.0.3)
-    mini_mime (1.1.5)
     minitest (5.22.3)
-    multi_xml (0.6.0)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
