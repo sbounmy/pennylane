@@ -1,8 +1,12 @@
-# Pennylane
+# Pennylane Ruby Library
 
-TODO: Delete this and the text below, and describe your gem
+The Pennylane Ruby library provides convenient access to the Pennylane API from applications written in the Ruby language. It includes a pre-defined set of classes for API resources that initialize themselves dynamically from API responses which makes it compatible with a wide range of versions of the Pennylane API.
+It only works with the [buys and sales API](https://pennylane.readme.io/reference/versioning).
+It was inspired by the [Stripe Ruby library](https://github.com/stripe/stripe-ruby).
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pennylane`. To experiment with that code, run `bin/console` for an interactive prompt.
+
+## Documentation
+See the [Pennylane API](https://pennylane.readme.io/reference/versioning) docs.
 
 ## Installation
 
@@ -10,15 +14,35 @@ TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with 
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add pennylane
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install pennylane
+
+## Requirements
+Ruby 2.3+.
 
 ## Usage
 
-TODO: Write usage instructions here
+The library needs to be configured with your account's token api which is available in your Pennylane Settings. Set Pennylane.api_key to its value:
+
+require 'pennylane'
+Pennylane.api_key = 'x0fd....'
+
+### list customers
+Pennylane::Customer.list
+
+### filter and paginate customers
+Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Apple'}], page: 2) per_page
+
+### Retrieve single customer
+Pennylane::Customer.retrieve('38a1f19a-256d-4692-a8fe-0a16403f59ff')
+
+
+## Test mode
+Pennylane provide a [test environment](https://help.pennylane.com/fr/articles/18773-creer-un-environnement-de-test). You can use the library with your test token api by setting the Pennylane.api_key to its value.
+
 
 ## Development
 
@@ -28,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pennylane. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/pennylane/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/sbounmy/pennylane. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/pennylane/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
