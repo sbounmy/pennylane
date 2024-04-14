@@ -26,7 +26,7 @@ class CustomerTest < Test::Unit::TestCase
     end
 
     test 'accepts filter' do
-      list = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'LUCKYSPACE'}].to_json)
+      list = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'LUCKYSPACE'}])
       assert_equal 1, list.customers.count
       assert_equal "LUCKYSPACE", list.customers[0].name
     end
@@ -69,7 +69,7 @@ class CustomerTest < Test::Unit::TestCase
   class CreateTest < CustomerTest
     test 'create customer' do
       customer = Pennylane::Customer.create customer_type: 'company', name: 'Tesla', address: '4 rue du faubourg', postal_code: '75008', city: 'Paris', country_alpha2: 'FR'
-      expected = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Tesla'}].to_json).first
+      expected = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Tesla'}]).first
 
       assert_equal expected.source_id, customer.source_id
       assert_equal 'Tesla', expected.name

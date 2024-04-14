@@ -33,6 +33,11 @@ module Pennylane
         def client
           @client ||= Pennylane::Client.new(Pennylane.api_key)
         end
+
+        def normalize_filters(filters)
+          filters[:filter] = filters[:filter].to_json if filters[:filter]
+          filters
+        end
       end
 
       # So we can call directly method on the object rather than going through his key
