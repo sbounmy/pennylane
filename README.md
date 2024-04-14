@@ -2,6 +2,7 @@
 
 The Pennylane Ruby library provides convenient access to the Pennylane API from applications written in the Ruby language. It includes a pre-defined set of classes for API resources that initialize themselves dynamically from API responses which makes it compatible with a wide range of versions of the Pennylane API.
 It only works with the [buys and sales API](https://pennylane.readme.io/reference/versioning).
+
 It was inspired by the [Stripe Ruby library](https://github.com/stripe/stripe-ruby).
 
 
@@ -9,8 +10,6 @@ It was inspired by the [Stripe Ruby library](https://github.com/stripe/stripe-ru
 See the [Pennylane API](https://pennylane.readme.io/reference/versioning) docs.
 
 ## Installation
-
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
 
 Install the gem and add to the application's Gemfile by executing:
 
