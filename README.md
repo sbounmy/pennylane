@@ -40,6 +40,27 @@ Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Apple'
 Pennylane::Customer.retrieve('38a1f19a-256d-4692-a8fe-0a16403f59ff')
 ```
 
+### Per-request api key [TODO]
+For apps that need to use multiple keys during the lifetime of a process. it's also possible to set a per-request key:
+```ruby
+require "pennylane"
+
+Pennylane::Customer.list(
+  {},
+  {
+    api_key: 'x1fa....'
+  }
+)
+
+Stripe::Customer.retrieve(
+  '38a1f19a-256d-4692-a8fe-0a16403f59ff',
+  {
+    api_key: 'x1fa....'
+  }
+)
+
+```
+
 ## Test mode
 Pennylane provide a [test environment](https://help.pennylane.com/fr/articles/18773-creer-un-environnement-de-test). You can use the library with your test token api by setting the `Pennylane.api_key` to its value.
 
