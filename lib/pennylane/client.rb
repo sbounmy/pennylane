@@ -36,8 +36,7 @@ module Pennylane
 
     def request method, path, params:, opts: {}
       req = initialize_request(method, path, params[:query]).tap do |req|
-        req.body = params[:body].to_json if params[:body] && method != :get
-        # req.query = params if !params.empty? && method == :get
+        req.body = params[:body].to_json if params[:body]
       end
 
       http.request(req).tap do |resp|

@@ -22,7 +22,8 @@ module Pennylane
 
   API_RESOURCES = {
     ListObject.object_name => ListObject,
-    Customer.object_name => Customer
+    Customer.object_name => Customer,
+    Supplier.object_name => Supplier
   }.freeze
 
   @config = Pennylane::Configuration.new
