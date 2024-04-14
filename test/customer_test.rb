@@ -56,6 +56,7 @@ class CustomerTest < Test::Unit::TestCase
     test "return object when found" do
       cus = Pennylane::Customer.retrieve('d9add8c6-3520-41a3-99c8-f54da7dd4d11')
       assert_equal 'LUCKYSPACE', cus.name
+      assert_equal 'd9add8c6-3520-41a3-99c8-f54da7dd4d11', cus.id
     end
 
     test "raise error on unknown attribute" do

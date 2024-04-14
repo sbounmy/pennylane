@@ -58,6 +58,7 @@ class SupplierTest < Test::Unit::TestCase
     test "return object when found" do
       sup = Pennylane::Supplier.retrieve('f44d50ac-f3f5-48cb-903a-30fdbcecaf2b')
       assert_equal 'Frais kilométriques', sup.name
+      assert_equal 'f44d50ac-f3f5-48cb-903a-30fdbcecaf2b', sup.id
     end
   end
 end

@@ -1,10 +1,7 @@
 module Pennylane
   class Object
     include Enumerable
-
-    def initialize(id = nil)
-      @id = id
-    end
+    attr_reader :id
 
     def initialize_from_response(response, params = {}, opts = {})
       values = Util.symbolize_names(response)
@@ -19,7 +16,7 @@ module Pennylane
     end
 
     def self.build_from(response, params = {}, opts = {})
-      new(response['id']).initialize_from_response(response, params, opts)
+      new.initialize_from_response(response, params, opts)
     end
 
     def self.objects

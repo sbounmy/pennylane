@@ -40,16 +40,22 @@ module Pennylane
         end
       end
 
+      def id
+        object.source_id || super
+      end
+
+      def object
+        @values[self.class.object_name.to_sym]
+      end
       # So we can call directly method on the object rather than going through his key
       # Pennylane::Customer.retrieve('any-id').name == Pennylane::Customer.retrieve('any-id').customer.name
       def method_missing(method_name, *args, &block)
-        obj = @values[self.class.object_name.to_sym]
-        raise NoMethodError, "undefined method `#{method_name}` for #{self.class}" unless obj
-        obj.send(method_name, *args, &block)
+        raise NoMethodError, "undefined method `#{method_name}` for #{self.class}" unless object
+        object.send(method_name, *args, &block)
       end
 
       def respond_to_missing?(method_name, include_private = false)
-        @values[self.class.object_name.to_sym].respond_to?(method_name) || super
+        object.respond_to?(method_name) || super
       end
 
     end
