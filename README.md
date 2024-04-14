@@ -52,7 +52,7 @@ Pennylane::Customer.list(
   }
 )
 
-Stripe::Customer.retrieve(
+Pennylane::Customer.retrieve(
   '38a1f19a-256d-4692-a8fe-0a16403f59ff',
   {
     api_key: 'x1fa....'
