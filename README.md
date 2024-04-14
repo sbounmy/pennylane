@@ -24,7 +24,7 @@ Ruby 2.3+.
 
 ## Usage
 
-The library needs to be configured with your account's token api which is available in your Pennylane Settings. Set Pennylane.api_key to its value:
+The library needs to be configured with your account's token api which is available in your Pennylane Settings. Set `Pennylane.api_key` to its value:
 
 ```ruby
 require 'pennylane'
@@ -34,14 +34,14 @@ Pennylane.api_key = 'x0fd....'
 Pennylane::Customer.list
 
 # filter and paginate customers
-Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Apple'}], page: 2) per_page
+Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Apple'}], page: 2)
 
 # Retrieve single customer
 Pennylane::Customer.retrieve('38a1f19a-256d-4692-a8fe-0a16403f59ff')
 ```
 
 ## Test mode
-Pennylane provide a [test environment](https://help.pennylane.com/fr/articles/18773-creer-un-environnement-de-test). You can use the library with your test token api by setting the Pennylane.api_key to its value.
+Pennylane provide a [test environment](https://help.pennylane.com/fr/articles/18773-creer-un-environnement-de-test). You can use the library with your test token api by setting the `Pennylane.api_key` to its value.
 
 
 ## Development
