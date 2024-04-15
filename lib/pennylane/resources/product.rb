@@ -8,8 +8,8 @@ module Pennylane
         request_pennylane_object(method: :get, path: "/products", params: { query: filters }, opts: opts)
       end
 
-      def retrieve customer_id, opts = {}
-        request_pennylane_object(method: :get, path: "/products/#{customer_id}", params: {}, opts: opts)
+      def retrieve id, opts = {}
+        request_pennylane_object(method: :get, path: "/products/#{id}", params: {}, opts: opts)
       end
 
       def create params, opts = {}
