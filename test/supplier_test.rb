@@ -83,4 +83,14 @@ class SupplierTest < Test::Unit::TestCase
     end
   end
 
+  class CreateTest < SupplierTest
+    test 'create supplier' do
+      customer = Pennylane::Supplier.create name: 'Apple Inc', address: '4 rue du faubourg', postal_code: '75008', city: 'Paris', country_alpha2: 'FR'
+      expected = Pennylane::Supplier.list(filter: [{field: 'name', operator: 'eq', value: 'Apple Inc'}]).first
+      assert_equal expected.source_id, customer.source_id
+      assert_equal 'Apple Inc', expected.name
+      assert_equal '4 rue du faubourg', expected.billing_address.address
+    end
+  end
+
 end

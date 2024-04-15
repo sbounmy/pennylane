@@ -11,6 +11,10 @@ module Pennylane
         request_pennylane_object(method: :get, path: "/suppliers/#{supplier_id}", params: {}, opts: opts)
       end
 
+      def create params, opts = {}
+        request_pennylane_object(method: :post, path: "/suppliers", params: { body: { object_name => params } }, opts: opts)
+      end
+
     end
   end
 end
