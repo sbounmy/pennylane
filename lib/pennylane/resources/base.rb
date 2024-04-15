@@ -40,13 +40,28 @@ module Pennylane
         end
       end
 
+      # object happens to be nil when the object is in a list
       def id
-        object.source_id || super
+        object&.source_id || super
       end
 
+      #
       def object
         @values[self.class.object_name.to_sym]
       end
+
+      def inspect
+        id_string = respond_to?(:id) && !id.nil? ? " id=#{id}" : ""
+        "#<#{self.class}:0x#{object_id.to_s(16)}#{id_string}> JSON: " +
+          JSON.pretty_generate(object.instance_variable_get(:@values))
+      end
+
+      def update(attributes)
+        resp, opts = self.class.request_pennylane_object(method: :put, path: "/#{self.class.object_name_plural}/#{id}", params: { body: { self.class.object_name => attributes } })
+        @values = resp.instance_variable_get :@values
+        self
+      end
+
       # So we can call directly method on the object rather than going through his key
       # Pennylane::Customer.retrieve('any-id').name == Pennylane::Customer.retrieve('any-id').customer.name
       def method_missing(method_name, *args, &block)

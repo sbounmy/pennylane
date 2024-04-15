@@ -71,10 +71,31 @@ class CustomerTest < Test::Unit::TestCase
     test 'create customer' do
       customer = Pennylane::Customer.create customer_type: 'company', name: 'Tesla', address: '4 rue du faubourg', postal_code: '75008', city: 'Paris', country_alpha2: 'FR'
       expected = Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Tesla'}]).first
-
       assert_equal expected.source_id, customer.source_id
       assert_equal 'Tesla', expected.name
       assert_equal '4 rue du faubourg', expected.billing_address.address
+    end
+  end
+
+  class UpdateAttributesTest < CustomerTest
+    test 'update customer attributes' do
+      postal_code = rand.to_s[2..6]
+      before = Pennylane::Customer.retrieve('c89d89d1-1b62-4777-9e37-d277116869bc')
+      before.update postal_code: postal_code, city: 'Paris', country_alpha2: 'FR'
+      after = Pennylane::Customer.retrieve('c89d89d1-1b62-4777-9e37-d277116869bc')
+
+      assert_equal before.source_id, after.source_id
+      assert_equal 'Tesla', after.name
+      assert_equal postal_code, after.billing_address.postal_code
+      assert_equal postal_code, before.billing_address.postal_code
+    end
+
+    test 'fails when trying to update restricted attribute' do
+      omit 'should raise something if attributes if not defined but API does not return an error'
+      before = Pennylane::Customer.retrieve('c89d89d1-1b62-4777-9e37-d277116869bc')
+      assert_raises NoMethodError do
+        before.update unknown: 'something'
+      end
     end
   end
 end

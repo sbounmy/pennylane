@@ -60,5 +60,27 @@ class SupplierTest < Test::Unit::TestCase
       assert_equal 'Frais kilométriques', sup.name
       assert_equal 'f44d50ac-f3f5-48cb-903a-30fdbcecaf2b', sup.id
     end
+
   end
+
+  class UpdateTest < SupplierTest
+    test 'update supplier attributes' do
+      vat = "FR#{rand.to_s[2..12]}"
+      before = Pennylane::Supplier.retrieve('f44d50ac-f3f5-48cb-903a-30fdbcecaf2b')
+      before.update vat_number: vat
+      after = Pennylane::Supplier.retrieve('f44d50ac-f3f5-48cb-903a-30fdbcecaf2b')
+
+      assert_equal before.source_id, after.source_id
+      assert_equal 'Frais kilométriques', after.name
+      assert_equal vat, after.vat_number
+      assert_equal vat, before.vat_number
+    end
+
+    test 'raise API error when is not valid' do
+      assert_raises Pennylane::Error do
+        Pennylane::Supplier.retrieve('f44d50ac-f3f5-48cb-903a-30fdbcecaf2b').update vat_number: 'invalid'
+      end
+    end
+  end
+
 end

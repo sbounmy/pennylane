@@ -38,6 +38,11 @@ Pennylane::Customer.list(filter: [{field: 'name', operator: 'eq', value: 'Apple'
 
 # Retrieve single customer
 Pennylane::Customer.retrieve('38a1f19a-256d-4692-a8fe-0a16403f59ff')
+
+# Update a customer
+cus = Pennylane::Customer.retrieve('38a1f19a-256d-4692-a8fe-0a16403f59ff')
+cus.update(name: 'Apple Inc')
+
 ```
 
 ### Per-request api key [TODO]
