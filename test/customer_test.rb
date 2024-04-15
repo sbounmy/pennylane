@@ -77,7 +77,7 @@ class CustomerTest < Test::Unit::TestCase
     end
   end
 
-  class UpdateAttributesTest < CustomerTest
+  class UpdateTest < CustomerTest
     test 'update customer attributes' do
       postal_code = rand.to_s[2..6]
       before = Pennylane::Customer.retrieve('c89d89d1-1b62-4777-9e37-d277116869bc')

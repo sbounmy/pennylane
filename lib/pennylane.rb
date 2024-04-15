@@ -23,6 +23,7 @@ module Pennylane
   API_RESOURCES = {
     ListObject.object_name => ListObject,
     Customer.object_name => Customer,
+    Product.object_name => Product,
     Supplier.object_name => Supplier
   }.freeze
 
