@@ -22,12 +22,11 @@ module Pennylane
 
     end
 
+    # since object name is different from the class name, we need to override the method
     def update(attributes)
       resp, opts = self.class.request_pennylane_object(method: :put, path: "/#{self.class.object_name_plural}/#{id}",
                                                        params: { body: { 'invoice' => attributes } },
                                                        opts: {}, with: { invoice: 'customer_invoice' })
-      puts resp.inspect
-      puts resp.line_items.length.inspect
       @values = resp.instance_variable_get :@values
       self
     end
