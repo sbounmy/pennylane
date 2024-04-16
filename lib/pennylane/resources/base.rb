@@ -11,9 +11,9 @@ module Pennylane
           "#{object_name}s"
         end
 
-        def request_pennylane_object(method:, path:, params: {}, opts: {}, usage: [])
+        def request_pennylane_object(method:, path:, params: {}, opts: {}, usage: [], with: {})
           resp, opts = execute_resource_request(method, path, params, opts, usage)
-          Util.convert_to_pennylane_object(Util.normalize_response(resp), params, opts)
+          Util.convert_to_pennylane_object(Util.normalize_response(resp, with), params, opts)
         end
 
         def execute_resource_request(method, path, params = {}, opts = {}, usage = [])
@@ -42,7 +42,9 @@ module Pennylane
 
       # object happens to be nil when the object is in a list
       def id
-        object&.source_id || super
+        object.source_id
+      rescue
+        super
       end
 
       #
@@ -50,11 +52,11 @@ module Pennylane
         @values[self.class.object_name.to_sym]
       end
 
-      def inspect
-        id_string = respond_to?(:id) && !id.nil? ? " id=#{id}" : ""
-        "#<#{self.class}:0x#{object_id.to_s(16)}#{id_string}> JSON: " +
-          JSON.pretty_generate(object.instance_variable_get(:@values) || @values)
-      end
+      # def inspect
+      #   id_string = respond_to?(:id) && !id.nil? ? " id=#{id}" : ""
+      #   "#<#{self.class}:0x#{object_id.to_s(16)}#{id_string}> JSON: " +
+      #     JSON.pretty_generate(object.instance_variable_get(:@values) || @values)
+      # end
 
       def update(attributes)
         resp, opts = self.class.request_pennylane_object(method: :put, path: "/#{self.class.object_name_plural}/#{id}", params: { body: { self.class.object_name => attributes } })

@@ -34,5 +34,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "vcr", "~> 6.2"
   spec.add_development_dependency "test-unit", "~> 3.6"
   spec.add_development_dependency "minitest", "~> 5.22"
+  spec.add_development_dependency "activesupport", "~> 7.1"
   # guide at: https://bundler.io/guides/creating_gem.html
 end

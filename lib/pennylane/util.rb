@@ -20,28 +20,38 @@ module Pennylane
       # It will add an _object key to each hash in the response
       # This key will contain the name of the object
       # It will also add an _object key to the root of the response
-      def normalize_response(object)
+      # with: is used to map the object name to a different class
+      # Example : GET /customer_invoices will return a list of invoices
+      #  {
+      #   "total_pages": 5,
+      #   "current_page": 1,
+      #   "total_invoices": 12,
+      #   "invoices": []
+      # }
+      # `invoices` should be `customer_invoice` so we can cast it to the right class CustomerInvoice
+      # Since we don't have the ability to change the API response.
+      # We can achieve this by calling normalize_response(response, with: {invoice: 'customer_invoice'})
+      def normalize_response(object, with={})
         # puts object.inspect
         case object
         when Hash
           new_hash = {}
-          new_hash['_object'] = object.has_key?('total_pages') ? 'list' : singularize(object.keys.first)
-
+          new_hash['_object'] = object.has_key?('total_pages') ? 'list' : (with[singularize(object.keys.first).to_sym] || singularize(object.keys.first))
           object.each do |key, value|
             if value.is_a? Array
               new_hash[key] = value.map do |h|
-                h['_object'] = singularize(key) if h.is_a? Hash
-                normalize_response(h)
+                h['_object'] = with[singularize(key).to_sym] || singularize(key) if h.is_a? Hash
+                normalize_response(h, with)
               end
             elsif value.is_a? Hash
-              value['_object'] = singularize(key)
+              value['_object'] = with[singularize(key).to_sym] || singularize(key)
             end
-            new_hash[key] = normalize_response(value)
+            new_hash[key] = normalize_response(value, with)
           end
           new_hash
         when Array
           object.map do |value|
-            normalize_response(value)
+            normalize_response(value, with)
           end
         else
           object

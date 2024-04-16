@@ -25,6 +25,7 @@ module Pennylane
     Category.object_name => Category,
     CategoryGroup.object_name => CategoryGroup,
     Customer.object_name => Customer,
+    CustomerInvoice.object_name => CustomerInvoice,
     Product.object_name => Product,
     Supplier.object_name => Supplier
   }.freeze

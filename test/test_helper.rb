@@ -7,3 +7,7 @@ require "test-unit"
 require 'minitest'
 # Minitest::Reporters.use! unless ENV['RM_INFO']
 require 'vcr'
+
+require 'active_support/testing/assertions'
+
+include ActiveSupport::Testing::Assertions

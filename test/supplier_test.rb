@@ -11,7 +11,6 @@ class SupplierTest < Test::Unit::TestCase
     test "#list" do
       suppliers = Pennylane::Supplier.list
       assert suppliers.count > 13
-      puts suppliers.inspect
     end
 
     test 'without api key raises error'  do
