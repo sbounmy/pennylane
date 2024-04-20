@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pennylane (0.1.0)
+    pennylane (0.2.0.pre.alpha)
 
 GEM
   remote: https://rubygems.org/
