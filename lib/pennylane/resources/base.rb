@@ -13,7 +13,11 @@ module Pennylane
 
         def request_pennylane_object(method:, path:, params: {}, opts: {}, usage: [], with: {})
           resp, opts = execute_resource_request(method, path, params, opts, usage)
-          Util.convert_to_pennylane_object(Util.normalize_response(resp, with), params, opts)
+          if resp.empty?
+            {}
+          else
+            Util.convert_to_pennylane_object(Util.normalize_response(resp, with), params, opts)
+          end
         end
 
         def execute_resource_request(method, path, params = {}, opts = {}, usage = [])
@@ -26,8 +30,7 @@ module Pennylane
             params: params,
             opts: opts
           )
-
-          [JSON.parse(resp.read_body), opts]
+          [JSON.parse(resp.read_body || "{}"), opts] # in case body is nil ew return an empty hash
         end
 
         def client

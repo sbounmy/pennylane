@@ -9,7 +9,6 @@ class ProductTest < Test::Unit::TestCase
   class ListTest < ProductTest
     test "#list" do
       products = Pennylane::Product.list
-      puts products.inspect
       assert products.count > 1
     end
 
@@ -33,7 +32,6 @@ class ProductTest < Test::Unit::TestCase
 
     test 'can iterate' do
       Pennylane::Product.list.each do |product|
-        puts product.inspect
         assert product.is_a? Pennylane::Product
       end
     end

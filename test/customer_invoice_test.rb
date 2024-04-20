@@ -51,7 +51,6 @@ class CustomerInvoiceTest < Test::Unit::TestCase
 
     test 'can iterate' do
       Pennylane::CustomerInvoice.list.each do |invoice|
-        puts invoice.inspect
         assert invoice.is_a? Pennylane::CustomerInvoice
       end
     end
@@ -111,6 +110,15 @@ class CustomerInvoiceTest < Test::Unit::TestCase
       before = Pennylane::CustomerInvoice.retrieve('c89d89d1-1b62-4777-9e37-d277116869bc')
       assert_raises NoMethodError do
         before.update unknown: 'something'
+      end
+    end
+  end
+
+  class FinalizeTest < CustomerInvoiceTest
+    test 'success with draft' do
+      assert_changes -> { Pennylane::CustomerInvoice.retrieve(draft.id).status }, from: 'draft', to: 'upcoming' do
+        draft.finalize
+        assert_equal 'upcoming', draft.status
       end
     end
   end
