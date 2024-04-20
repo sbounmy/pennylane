@@ -122,4 +122,22 @@ class CustomerInvoiceTest < Test::Unit::TestCase
       end
     end
   end
+
+  class MarkAsPaidTest < CustomerInvoiceTest
+
+    test 'success with upcoming' do
+      draft.finalize
+      assert_changes -> { Pennylane::CustomerInvoice.retrieve(draft.id).status }, from: 'upcoming', to: 'paid' do
+        draft.mark_as_paid
+        assert_equal 'paid', draft.status
+      end
+    end
+
+    test 'error with draft' do
+      assert_raises Pennylane::Error do
+        draft.mark_as_paid
+      end
+    end
+
+  end
 end

@@ -60,5 +60,13 @@ module Pennylane
       self
     end
 
+    def mark_as_paid
+      resp, opts = self.class.request_pennylane_object(method: :put,
+                                          path: "/customer_invoices/#{id}/mark_as_paid",
+                                          params: {},
+                                          opts: {}, with: { invoice: 'customer_invoice' })
+      @values = resp.instance_variable_get :@values
+      self
+    end
   end
 end
