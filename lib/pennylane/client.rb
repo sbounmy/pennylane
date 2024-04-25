@@ -3,7 +3,7 @@ module Pennylane
     BASE_URI = 'app.pennylane.com/api/external'.freeze
     VERSION = 'v1'.freeze
 
-    attr_accessor :key, :version
+    attr_accessor :version
 
     def initialize(key, version: 'v1')
       @key = key
@@ -21,7 +21,7 @@ module Pennylane
     end
 
 
-    def authorization
+    def authorization(key)
       "Bearer #{key}"
     end
     def http
@@ -34,8 +34,8 @@ module Pennylane
       Net::HTTP.const_get(method.to_s.capitalize)
     end
 
-    def request method, path, params:, opts: {}
-      req = initialize_request(method, path, params[:query]).tap do |req|
+    def request method, path, params: {}, opts: {}
+      req = initialize_request(method, path, params[:query], opts).tap do |req|
         req.body = params[:body].to_json if params[:body]
       end
 
@@ -61,10 +61,11 @@ module Pennylane
     def should_handle_as_error?(code)
       code.to_i >= 400
     end
-    def initialize_request method=nil, path=nil, params={}
+
+    def initialize_request method=nil, path=nil, params={}, opts={}
       klass(method).new(url(path, params)).tap do |request|
         request["content-type"] = 'application/json'
-        request["authorization"] = authorization
+        request["authorization"] = authorization(opts.fetch(:api_key, @key))
       end
     end
 

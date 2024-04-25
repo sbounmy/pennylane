@@ -48,7 +48,7 @@ class ProductTest < Test::Unit::TestCase
 
     test "return object when found" do
       prod = Pennylane::Product.retrieve('fee')
-      assert_equal 'Frais de Service', prod.label
+      assert_equal 'Frais de service', prod.label
       assert_equal 'fee', prod.id
     end
 

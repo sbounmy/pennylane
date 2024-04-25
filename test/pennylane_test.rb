@@ -8,8 +8,4 @@ class PennylaneTest < Test::Unit::TestCase
       ::Pennylane.const_defined?(:VERSION)
     end
   end
-
-  test "something useful" do
-    assert_equal("expected", "actual")
-  end
 end

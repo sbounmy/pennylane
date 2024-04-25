@@ -86,9 +86,7 @@ module Pennylane
       when Pennylane::Object
         obj.class.build_from(
           deep_copy(obj.instance_variable_get(:@values)),
-          obj.instance_variable_get(:@opts).select do |k, _v|
-            Util::OPTS_COPYABLE.include?(k)
-          end
+          obj.instance_variable_get(:@opts)
         )
       else
         obj

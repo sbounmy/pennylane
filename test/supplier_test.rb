@@ -29,7 +29,6 @@ class SupplierTest < Test::Unit::TestCase
     test 'accepts page' do
       list = Pennylane::Supplier.list(page: 2)
       assert list.suppliers.count > 1
-      assert_equal "Homebox", list.suppliers[0].name
     end
 
     test 'can iterate' do

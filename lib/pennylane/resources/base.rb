@@ -1,6 +1,7 @@
 module Pennylane
   module Resources
     class Base < Pennylane::Object
+
       class << self
 
         def object_name
@@ -21,9 +22,6 @@ module Pennylane
         end
 
         def execute_resource_request(method, path, params = {}, opts = {}, usage = [])
-          api_key = opts.delete(:api_key) || Pennylane.api_key
-
-
           resp = client.request(
             method,
             path,
@@ -34,7 +32,8 @@ module Pennylane
         end
 
         def client
-          @client ||= Pennylane::Client.new(Pennylane.api_key)
+          @client ||= {}
+          @client[Pennylane.api_key] ||= Pennylane::Client.new(Pennylane.api_key)
         end
 
         def normalize_filters(filters)

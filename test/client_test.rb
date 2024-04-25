@@ -8,14 +8,14 @@ class Pennylane::ClientTest < Test::Unit::TestCase
 
   class RequestTest < Pennylane::ClientTest
     test "works on get" do
-      resp = client.request(:get, '/customers', body: {})
+      resp = client.request(:get, '/customers', params: { body: {} })
 
       obj = JSON.parse(resp.read_body)
       assert obj['total_customers'] > 19
     end
 
     test "works on get with params" do
-      resp = client.request(:get, '/customers', body: { page: 2 })
+      resp = client.request(:get, '/customers', params: { body: { page: 2 } })
 
       obj = JSON.parse(resp.read_body)
       assert_equal 2, obj['current_page']
@@ -23,7 +23,7 @@ class Pennylane::ClientTest < Test::Unit::TestCase
 
     test "works on post" do
       customer_params = { customer_type: 'company', name: 'Tesla', address: '4 rue du faubourg', postal_code: '75008', city: 'Paris', country_alpha2: 'FR' }
-      resp = client.request(:post, '/customers', body: { customer: customer_params }
+      resp = client.request(:post, '/customers', params: { body: { customer: customer_params } }
                               )
 
       obj = JSON.parse(resp.read_body)
