@@ -11,8 +11,8 @@ class CustomerInvoiceTest < Test::Unit::TestCase
     [{label: 'Demo label', quantity: 1, currency_amount: 10_00, unit: 'piece', vat_rate: 'FR_200'}]
   end
 
-  def draft
-    customer_params = { name: 'Tesla', customer_type: 'company', address: '4 rue du faubourg', postal_code: '75001', city: 'Paris', country_alpha2: 'FR' }
+  def draft invoice_params ={}
+    customer_params = { name: 'Tesla', customer_type: 'company', address: '4 rue du faubourg', postal_code: '75001', city: 'Paris', country_alpha2: 'FR', emails: ['stephane+tesla@hackerhouse.paris'] }
     date = Date.today
     deadline = Date.today >> 1
 
@@ -20,7 +20,7 @@ class CustomerInvoiceTest < Test::Unit::TestCase
                                                   invoice: { date: date, deadline: deadline, draft: true,
                                                    customer: customer_params,
                                                    line_items: line_items
-                                              }
+                                              }.merge(invoice_params)
 
   end
   class ListTest < CustomerInvoiceTest
@@ -136,6 +136,24 @@ class CustomerInvoiceTest < Test::Unit::TestCase
     test 'error with draft' do
       assert_raises Pennylane::Error do
         draft.mark_as_paid
+      end
+    end
+
+  end
+
+  class SendByEmailTest < CustomerInvoiceTest
+
+    test '204 response' do
+      invoice = draft(draft: false)
+      sleep 5 # wait for the pdf to be generated
+      assert_nothing_raised do
+        invoice.send_by_email
+      end
+    end
+
+    test 'error with draft' do
+      assert_raises Pennylane::Error do
+        draft.send_by_email
       end
     end
 

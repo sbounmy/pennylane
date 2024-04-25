@@ -68,5 +68,18 @@ module Pennylane
       @values = resp.instance_variable_get :@values
       self
     end
+
+    def send_by_email
+      self.class.request_pennylane_object(method: :post,
+                                                       path: "/customer_invoices/#{id}/send_by_email",
+                                                       params: {},
+                                                       opts: {}, with: { invoice: 'customer_invoice' })
+      resp, opts = self.class.request_pennylane_object(method: :get,
+                                                       path: "/customer_invoices/#{id}",
+                                                       params: {},
+                                                       opts: {}, with: { invoice: 'customer_invoice' })
+      @values = resp.instance_variable_get :@values
+      self
+    end
   end
 end
