@@ -44,20 +44,8 @@ module Pennylane
       self
     end
 
-    # API returns an empty body
-    # so we need to skip values assignment from the response
-    # GET /customer_invoices/:id again to get the updated values
     def finalize
-      self.class.request_pennylane_object(method: :put,
-                                                       path: "/customer_invoices/#{id}/finalize",
-                                                       params: {},
-                                                       opts: {}, with: { invoice: 'customer_invoice' })
-      resp, opts = self.class.request_pennylane_object(method: :get,
-                                          path: "/customer_invoices/#{id}",
-                                          params: {},
-                                          opts: {}, with: { invoice: 'customer_invoice' })
-      @values = resp.instance_variable_get :@values
-      self
+      request_and_retrieve(method: :put, path: "/customer_invoices/#{id}", action: 'finalize')
     end
 
     def mark_as_paid
@@ -70,12 +58,21 @@ module Pennylane
     end
 
     def send_by_email
-      self.class.request_pennylane_object(method: :post,
-                                                       path: "/customer_invoices/#{id}/send_by_email",
-                                                       params: {},
-                                                       opts: {}, with: { invoice: 'customer_invoice' })
+      request_and_retrieve(method: :post, path: "/customer_invoices/#{id}", action: 'send_by_email')
+    end
+
+    private
+
+    # When API returns an empty body
+    # so we need to skip values assignment from the response
+    # GET /customer_invoices/:id again to get the updated values
+    def request_and_retrieve(method:, path:, action:)
+      self.class.request_pennylane_object(method: method,
+                                          path: "#{path}/#{action}",
+                                          params: {},
+                                          opts: {}, with: { invoice: 'customer_invoice' })
       resp, opts = self.class.request_pennylane_object(method: :get,
-                                                       path: "/customer_invoices/#{id}",
+                                                       path: path,
                                                        params: {},
                                                        opts: {}, with: { invoice: 'customer_invoice' })
       @values = resp.instance_variable_get :@values
