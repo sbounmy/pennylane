@@ -158,4 +158,18 @@ class CustomerInvoiceTest < Test::Unit::TestCase
     end
 
   end
+
+  class LinksTest < CustomerInvoiceTest
+
+    test 'success when invoice with credit' do
+      invoice1 = Pennylane::CustomerInvoice.list.first
+      invoice2 = draft(draft: false, line_items: [{label: 'Credit', quantity: 1, currency_amount: -33, unit: 'piece', vat_rate: 'FR_200'}])
+
+      assert_nothing_raised do
+        links = Pennylane::CustomerInvoice.links(invoice1.quote_group_uuid, invoice2.quote_group_uuid, opts: { 'test': '1' })
+        assert_equal invoice1.quote_group_uuid, links.quote_group_uuid
+      end
+    end
+
+  end
 end

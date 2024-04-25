@@ -20,6 +20,10 @@ module Pennylane
         request_pennylane_object(method: :post, path: "/customer_invoices", params: { body: params }, opts: opts, with: { invoice: 'customer_invoice' })
       end
 
+      def links(*quote_group_uuids, opts: {})
+        request_pennylane_object(method: :post, path: "/customer_invoices/links", params: { body: { quote_group_uuids: quote_group_uuids } },
+                                                                                opts: {})
+      end
     end
 
     # since object name is different from the class name, we need to override the object_name method
