@@ -11,7 +11,7 @@ require 'forwardable'
 require 'uri'
 require 'net/http'
 
-Dir["./lib/pennylane/resources/*.rb"].each {|file| require file }
+Dir[File.join(__dir__, 'pennylane/resources/*.rb')].each {|file| require file }
 
 require 'pennylane/object_types'
 
