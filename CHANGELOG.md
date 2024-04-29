@@ -1,4 +1,5 @@
-## [Unreleased]
+## [1.0.1] - 2024-04-29
+- Fixed gem initialization issue (resources/*.rb) from a Rails app.
 
 ## [1.0.0] - 2024-04-29
 
