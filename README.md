@@ -191,7 +191,19 @@ Pennylane::Customer.retrieve(
 )
 
 ```
+### Accessing resource properties
 
+Both indexer and accessors can be used to retrieve values of resource properties.
+
+```ruby
+customer = Pennylane::Customer.retrieve('customer_id')
+puts customer['name']
+puts customer.name
+
+# NOTE: To do this the gem will try to guess the key of the resource.
+# Otherwise we will have to do Pennylane::Customer.retrieve('customer_id').customer.name
+# We rely on `method_missing` to do Pennylane::Customer.retrieve('customer_id').name
+```
 
 ## Test mode
 Pennylane provide a [test environment](https://help.pennylane.com/fr/articles/18773-creer-un-environnement-de-test). You can use the library with your test token api by setting the `Pennylane.api_key` to its value.

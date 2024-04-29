@@ -49,6 +49,11 @@ module Pennylane
         super
       end
 
+      # object happens to be nil when the object is the nested object
+      def [](k)
+        (object && object[k.to_sym]) || @values[k.to_sym]
+      end
+
       #
       def object
         @values[self.class.object_name.to_sym]
