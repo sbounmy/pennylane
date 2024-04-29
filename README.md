@@ -16,9 +16,22 @@ Install the gem and add to the application's Gemfile by executing:
     $ bundle add pennylane
 
 If bundler is not being used to manage dependencies, install the gem by executing:
+```ruby
+# Add to gemfile
+gem 'pennylane'
+```
 
-    $ gem install pennylane
+For Rails app :
+```ruby
+# Create initializers/pennylane.rb
+Pennylane.api_key = Rails.application.credentials.dig(:pennylane, :api_key)
 
+# Add credentials to config/credentials.yml.enc
+$ EDITOR=vim bin/rails credentials:edit
+
+pennylane:
+  api_key: 'x0fd....'
+```
 ## Requirements
 Ruby 2.3+.
 
