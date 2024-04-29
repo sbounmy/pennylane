@@ -58,6 +58,11 @@ module Pennylane
         end
       end
 
+      def file(file_path)
+        file_data = File.open(file_path).read
+        Base64.strict_encode64(file_data)
+      end
+
       # This method is used to convert the keys of a hash from strings to symbols
       def symbolize_names(object)
         case object

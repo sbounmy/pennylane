@@ -20,6 +20,10 @@ module Pennylane
         request_pennylane_object(method: :post, path: "/customer_invoices", params: { body: params }, opts: opts, with: { invoice: 'customer_invoice' })
       end
 
+      def import params, opts={}
+        request_pennylane_object(method: :post, path: "/customer_invoices/import", params: { body: params }, opts: opts, with: { invoice: 'customer_invoice' })
+      end
+
       def links(*quote_group_uuids, opts: {})
         request_pennylane_object(method: :post, path: "/customer_invoices/links", params: { body: { quote_group_uuids: quote_group_uuids } },
                                                                                 opts: {})

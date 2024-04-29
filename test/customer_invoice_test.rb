@@ -7,19 +7,22 @@ class CustomerInvoiceTest < Test::Unit::TestCase
     Pennylane.api_key = 'x0dFJzrOYxeJgzEddjT1agJl1K9T4C-kpjg7qpuKyEs'
   end
 
-  def line_items
+  def line_items_params
     [{label: 'Demo label', quantity: 1, currency_amount: 10_00, unit: 'piece', vat_rate: 'FR_200'}]
   end
 
+  def customer_params
+    { name: 'Tesla', customer_type: 'company', address: '4 rue du faubourg', postal_code: '75001', city: 'Paris', country_alpha2: 'FR', emails: ['stephane+tesla@hackerhouse.paris'] }
+  end
+
   def draft invoice_params ={}
-    customer_params = { name: 'Tesla', customer_type: 'company', address: '4 rue du faubourg', postal_code: '75001', city: 'Paris', country_alpha2: 'FR', emails: ['stephane+tesla@hackerhouse.paris'] }
     date = Date.today
     deadline = Date.today >> 1
 
     @draft ||= Pennylane::CustomerInvoice.create  create_customer: true, create_products: true,
                                                   invoice: { date: date, deadline: deadline, draft: true,
                                                    customer: customer_params,
-                                                   line_items: line_items
+                                                   line_items: line_items_params
                                               }.merge(invoice_params)
 
   end
@@ -100,7 +103,7 @@ class CustomerInvoiceTest < Test::Unit::TestCase
   class UpdateTest < CustomerInvoiceTest
     test 'update invoice attributes' do
       assert_difference -> { Pennylane::CustomerInvoice.retrieve(draft.id).line_items.length }, 1 do
-        draft.update line_items: line_items
+        draft.update line_items: line_items_params
       end
       assert_equal 2, draft.line_items.length
     end
@@ -168,6 +171,20 @@ class CustomerInvoiceTest < Test::Unit::TestCase
       assert_nothing_raised do
         links = Pennylane::CustomerInvoice.links(invoice1.quote_group_uuid, invoice2.quote_group_uuid, opts: { 'test': '1' })
         assert_equal invoice1.quote_group_uuid, links.quote_group_uuid
+      end
+    end
+
+  end
+
+  class ImportTest < CustomerInvoiceTest
+
+    test 'success with payload and pdf' do
+      assert_raises Pennylane::Error, '422 - The pdf received at params[:file] already exists in the application on another invoice (other invoice id: QAO77PXGHO)' do
+        Pennylane::CustomerInvoice.import(file: Util.file(File.expand_path('../fixtures/files/invoice.pdf', __FILE__)),
+                                          create_customer: true,
+                                          invoice: { date: Date.today, deadline: Date.today >> 1,
+                                                     customer: customer_params,
+                                                     line_items: line_items_params })
       end
     end
 
