@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module Pennylane
-  VERSION = "0.2.0-alpha"
+  VERSION = "1.0.0"
 end
