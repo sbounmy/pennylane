@@ -11,24 +11,15 @@ require 'forwardable'
 require 'uri'
 require 'net/http'
 
-Dir["./lib/pennylane/resources/*.rb"].each {|file| require file }
+Dir[File.join(__dir__, 'pennylane/resources/*.rb')].each {|file| require file }
 
+require 'pennylane/object_types'
 
 module Pennylane
   class Error < StandardError; end
   class AuthenticationError < Error; end
   class ConfigurationError < Error; end
   class NotFoundError < Error; end
-
-  API_RESOURCES = {
-    ListObject.object_name => ListObject,
-    Category.object_name => Category,
-    CategoryGroup.object_name => CategoryGroup,
-    Customer.object_name => Customer,
-    CustomerInvoice.object_name => CustomerInvoice,
-    Product.object_name => Product,
-    Supplier.object_name => Supplier
-  }.freeze
 
   @config = Pennylane::Configuration.new
   # So we can have a module Pennylane that can be a class as well Pennylane.api_key = '1234'

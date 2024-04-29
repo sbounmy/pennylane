@@ -19,7 +19,7 @@ module Pennylane
     end
 
     def key_for(resp)
-      resp.keys.find { |k| Pennylane::API_RESOURCES.keys.include?(Util.singularize(k.to_s)) } || resp.keys.find { |k| resp[k].is_a? Array }
+      resp.keys.find { |k| Pennylane::ObjectTypes.object_names_to_classes.keys.include?(Util.singularize(k.to_s)) } || resp.keys.find { |k| resp[k].is_a? Array }
     end
 
   end

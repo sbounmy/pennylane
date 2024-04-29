@@ -85,7 +85,7 @@ module Pennylane
       end
 
       def klass_for(object)
-        Pennylane::API_RESOURCES[singularize(object)] || Pennylane::Object
+        Pennylane::ObjectTypes.object_names_to_classes[singularize(object)] || Pennylane::Object
       rescue
         Pennylane::Object
       end
