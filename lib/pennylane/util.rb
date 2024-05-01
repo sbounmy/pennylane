@@ -32,7 +32,6 @@ module Pennylane
       # Since we don't have the ability to change the API response.
       # We can achieve this by calling normalize_response(response, with: {invoice: 'customer_invoice'})
       def normalize_response(object, with={})
-        # puts object.inspect
         case object
         when Hash
           new_hash = {}

@@ -76,7 +76,6 @@ class CustomerInvoiceTest < Test::Unit::TestCase
 
     test "return object when found" do
       invoice = Pennylane::CustomerInvoice.retrieve('OJRX1PO8OC')
-      puts invoice.inspect
       assert_equal 'Facture Stephane Bounmy - F-2022-14 (label généré)', invoice.label
       assert_equal 'OJRX1PO8OC', invoice.id
     end
@@ -180,7 +179,7 @@ class CustomerInvoiceTest < Test::Unit::TestCase
 
     test 'success with payload and pdf' do
       assert_raises Pennylane::Error, '422 - The pdf received at params[:file] already exists in the application on another invoice (other invoice id: QAO77PXGHO)' do
-        Pennylane::CustomerInvoice.import(file: Util.file(File.expand_path('../fixtures/files/invoice.pdf', __FILE__)),
+        Pennylane::CustomerInvoice.import(file: Pennylane::Util.file(File.expand_path('../fixtures/files/invoice.pdf', __FILE__)),
                                           create_customer: true,
                                           invoice: { date: Date.today, deadline: Date.today >> 1,
                                                      customer: customer_params,

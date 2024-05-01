@@ -78,16 +78,24 @@ class CategoryTest < Test::Unit::TestCase
   end
 
   class UpdateTest < CategoryTest
-    test 'update category attributes' do
-      postal_code = rand.to_s[2..6]
-      before = Pennylane::Category.retrieve('7a38e5f3-e523-40c6-a80b-79eddf943072')
-      before.update is_editable: true
-      after = Pennylane::Category.retrieve('7a38e5f3-e523-40c6-a80b-79eddf943072')
+    test 'update category is_editable' do
+      omit 'for some reason is_editable does not work properly on the API side (tested on their API explorer)'
+      category = Pennylane::Category.retrieve('742ae9bd-6649-40f5-a456-30aae04a6a2a')
+      category.update is_editable: false
 
-      assert_equal before.source_id, after.source_id
-      assert_equal 'Virements internes', after.label
-      assert_equal true, after.is_editable
-      assert_equal true, before.is_editable
+
+      assert_changes -> { Pennylane::Category.retrieve('742ae9bd-6649-40f5-a456-30aae04a6a2a').is_editable }, from: false, to: true  do
+        category.update is_editable: true
+      end
+    end
+
+    test 'update category label' do
+      label = "New Category #{rand.to_s[2..10]}"
+      category = Pennylane::Category.retrieve('742ae9bd-6649-40f5-a456-30aae04a6a2a')
+
+      assert_changes -> { Pennylane::Category.retrieve('742ae9bd-6649-40f5-a456-30aae04a6a2a').label }, to: label  do
+        category.update label: label
+      end
     end
 
     test 'fails when trying to update restricted attribute' do
