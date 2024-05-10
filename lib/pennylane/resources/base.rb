@@ -74,7 +74,7 @@ module Pennylane
       # So we can call directly method on the object rather than going through his key
       # Pennylane::Customer.retrieve('any-id').name == Pennylane::Customer.retrieve('any-id').customer.name
       def method_missing(method_name, *args, &block)
-        raise NoMethodError, "undefined method `#{method_name}` for #{self.class}" unless object
+        raise NoMethodError, "undefined method `#{method_name}` for #{self.class}.\nMethods available : #{@values.keys}" unless object
         object.send(method_name, *args, &block)
       end
 
