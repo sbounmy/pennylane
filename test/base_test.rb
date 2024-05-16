@@ -10,7 +10,7 @@ class BaseTest < Test::Unit::TestCase
   class MethodErrorTest < BaseTest
     test 'print list of methods available on failure' do
       error = assert_raises NoMethodError do
-        Pennylane::Customer.list.first.some_method_name
+        vcr { Pennylane::Customer.list.first.some_method_name }
       end
 
       assert_match /Methods available/, error.message

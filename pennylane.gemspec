@@ -32,8 +32,10 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_development_dependency "vcr", "~> 6.2"
+  spec.add_development_dependency "webmock", "~> 3.23"
   spec.add_development_dependency "test-unit", "~> 3.6"
   spec.add_development_dependency "minitest", "~> 5.22"
   spec.add_development_dependency "activesupport", "~> 7.1"
+  spec.add_development_dependency "timecop", "~> 0.9"
   # guide at: https://bundler.io/guides/creating_gem.html
 end

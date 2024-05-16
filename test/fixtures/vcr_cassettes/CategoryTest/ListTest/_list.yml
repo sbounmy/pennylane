@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.pennylane.com/api/external/v1/categories
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - app.pennylane.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer x0dFJzrOYxeJgzEddjT1agJl1K9T4C-kpjg7qpuKyEs
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 16 May 2024 07:54:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '6521'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Api-Version-Expires-At:
+      - ''
+      Etag:
+      - W/"6e88603fd8255aa978e9735e4eaffde7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy:
+      - 'default-src ''self''; base-uri ''self''; connect-src ''self'' https: blob:
+        https://*.screeb.app wss://*.screeb.app https://track-eu.customer.io https://*.api.gist.build
+        https://*.cloud.gist.build wss://ws-eu.pusher.com wss://*.hotjar.com wss://*.intercom.io
+        https://api.segment.io https://cdn.segment.com https://*.intercom.io https://*.eu.intercom.io
+        https://rum.browser-intake-datadoghq.com https://in.eu2.segmentapis.com https://events.eu1.segmentapis.com;
+        child-src ''self'' https://demo.arcade.software https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com https://app.datadoghq.com/
+        https://www.figma.com https://vars.hotjar.com https://insights.hotjar.com
+        https://surveys.hotjar.com https://*.githubusercontent.com https://*.google.com
+        blob: https://js.intercomcdn.com https://widget.intercom.io https://intercom-sheets.com
+        https://video-messages.intercomcdn.com https://metabase.pennylane.tech https://metabase.pennylane.com
+        https://pennylane.com https://identity.swan.io https://stage.teledec.fr https://www.teledec.fr
+        https://form.typeform.com/ https://www.youtube.com https://m.youtube.com https://content.pennylane.com
+        https://pay-sandbox.gocardless.com https://pay.gocardless.com https://js.stripe.com
+        https://hooks.stripe.com; font-src ''self'' http: https: data: blob:; frame-src
+        ''self'' https://demo.arcade.software https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com https://app.datadoghq.com/
+        https://www.figma.com https://vars.hotjar.com https://insights.hotjar.com
+        https://surveys.hotjar.com https://renderer.gist.build https://code.gist.build
+        https://*.githubusercontent.com https://*.google.com blob: https://js.intercomcdn.com
+        https://widget.intercom.io https://intercom-sheets.com https://video-messages.intercomcdn.com
+        https://metabase.pennylane.tech https://metabase.pennylane.com https://pennylane.com
+        https://identity.swan.io https://stage.teledec.fr https://www.teledec.fr https://form.typeform.com/
+        https://www.youtube.com https://m.youtube.com https://content.pennylane.com
+        https://pay-sandbox.gocardless.com https://pay.gocardless.com https://*.screeb.app
+        wss://*.screeb.app https://js.stripe.com https://hooks.stripe.com; frame-ancestors
+        ''self'' https://business.foodetective.co https://business.staging.foodtekk.com
+        https://vars.hotjar.com https://insights.hotjar.com https://surveys.hotjar.com
+        https://renderer.gist.build https://code.gist.build; img-src ''self'' https:
+        blob: data: https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com; media-src data: https://js.intercomcdn.com https://widget.intercom.io
+        https://intercom-sheets.com https://video-messages.intercomcdn.com; object-src
+        ''self'' mailto: https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com http://www.lei-france.insee.fr
+        https://www.lei-france.insee.fr https://invoice.stripe.com; script-src ''self''
+        ''strict-dynamic'' ''unsafe-eval'' ''unsafe-inline'' https: http: https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://cdn.segment.com https://www.figma.com https://script.hotjar.com https://static.hotjar.com
+        https://vars.hotjar.com https://assets.customer.io https://code.gist.build
+        https://js.intercomcdn.com https://widget.intercom.io https://intercom-sheets.com
+        https://video-messages.intercomcdn.com https://unpkg.com https://*.screeb.app
+        wss://*.screeb.app https://form.typeform.com/ https://www.youtube.com https://m.youtube.com
+        ''nonce-URB2w3W8WulpGaFmCRKRPA==''; script-src-attr ''unsafe-inline'' ''nonce-URB2w3W8WulpGaFmCRKRPA=='';
+        script-src-elem ''self'' ''strict-dynamic'' ''unsafe-eval'' ''unsafe-inline''
+        https: http: https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com https://cdn.segment.com https://www.figma.com
+        https://script.hotjar.com https://static.hotjar.com https://vars.hotjar.com
+        https://assets.customer.io https://code.gist.build https://js.intercomcdn.com
+        https://widget.intercom.io https://intercom-sheets.com https://video-messages.intercomcdn.com
+        https://unpkg.com https://*.screeb.app wss://*.screeb.app https://form.typeform.com/
+        https://www.youtube.com https://m.youtube.com ''nonce-URB2w3W8WulpGaFmCRKRPA=='';
+        style-src ''self'' ''unsafe-inline'' https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css https://ka-p.fontawesome.com
+        https://fonts.googleapis.com https://www.gstatic.com https://*.typekit.net
+        https://api.pagescreen.io https://code.gist.build; style-src-elem ''self''
+        data: ''unsafe-inline'' https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css
+        https://ka-p.fontawesome.com https://fonts.googleapis.com https://www.gstatic.com
+        https://*.typekit.net https://api.pagescreen.io https://code.gist.build; worker-src
+        ''self'' blob:; report-uri https://pennylane.report-uri.com/r/d/csp/reportOnly'
+      Set-Cookie:
+      - _jeancaisse_session=XGWw82CsWN2GleoDIfYfmMW%2BLjfvpV1oifFRXgoADPU3xPvUHUeOH6dIjcyHWE2eeE3HsNnqVbtpqpfbE5lxJAagM1zeTxJlPPCJg1RXYKCc6r0RLT6em3IRbnlVeRDXzi2RvQE4SxUwF%2FFJVrDFzG%2BG68wzp%2BYUYcpi5QarMO2aEafsPEDX66zluw%3D%3D--%2FISYvnddlDIvTrZ0--SQY4p7UJMYfUynUce8w33g%3D%3D;
+        path=/; secure; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - a12257f2-206e-4c8f-8b55-583686522ce9
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0b3RhbF9wYWdlcyI6MywiY3VycmVudF9wYWdlIjoxLCJ0b3RhbF9jYXRlZ29yaWVzIjo0MSwiY2F0ZWdvcmllcyI6W3siZ3JvdXBfc291cmNlX2lkIjoiYmQ0YzQ5M2YtZDRmNC00MDMzLTg1MDUtOGQ5NWQ4NjQ5ZmRhIiwiZ3JvdXBfbGFiZWwiOiJUeXBlcyBkZSBkw6lwZW5zZXMgLyByZXZlbnVzIiwiaWQiOjk3NzgzNTIsInNvdXJjZV9pZCI6ImEyZGEwMDU2LTM4NmEtNGI0ZS04YzJhLWRhMjdlMzQ4YzE2ZCIsImxhYmVsIjoiTmV3IENhdGVnb3J5IDc2MDgyMzA4MyIsImRpcmVjdGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMTZUMDc6NTQ6NTYuMDA2MTYyWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTE2VDA3OjU0OjU2LjAwMjAxMVoiLCJpc19lZGl0YWJsZSI6dHJ1ZX0seyJncm91cF9zb3VyY2VfaWQiOiJiZDRjNDkzZi1kNGY0LTQwMzMtODUwNS04ZDk1ZDg2NDlmZGEiLCJncm91cF9sYWJlbCI6IlR5cGVzIGRlIGTDqXBlbnNlcyAvIHJldmVudXMiLCJpZCI6OTc3Nzg5Nywic291cmNlX2lkIjoiNTQ5YzcyYjctNDdjNy00ZDFjLWFlMDQtMWE2YjQ1YjA5YWE5IiwibGFiZWwiOiJOZXcgQ2F0ZWdvcnkgNjU0NDAwNjQ4IiwiZGlyZWN0aW9uIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyNC0wNS0xNlQwNzoxMDo1Ny4zMDIzMjVaIiwidXBkYXRlZF9hdCI6IjIwMjQtMDUtMTZUMDc6MTA6NTcuMjk3MDUzWiIsImlzX2VkaXRhYmxlIjp0cnVlfSx7Imdyb3VwX3NvdXJjZV9pZCI6ImJkNGM0OTNmLWQ0ZjQtNDAzMy04NTA1LThkOTVkODY0OWZkYSIsImdyb3VwX2xhYmVsIjoiVHlwZXMgZGUgZMOpcGVuc2VzIC8gcmV2ZW51cyIsImlkIjo5NjU1ODg5LCJzb3VyY2VfaWQiOiI1MWE0OTY4ZC1hNjUxLTQ2YWUtOWM3YS1iMmFlOGNmMWUxMjYiLCJsYWJlbCI6Ik5ldyBDYXRlZ29yeSA2NzQ5NTEzNDYiLCJkaXJlY3Rpb24iOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEzOjA2OjI5LjM4MTg5OVoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMzowNjoyOS4zNzY2OThaIiwiaXNfZWRpdGFibGUiOnRydWV9LHsiZ3JvdXBfc291cmNlX2lkIjoiYmQ0YzQ5M2YtZDRmNC00MDMzLTg1MDUtOGQ5NWQ4NjQ5ZmRhIiwiZ3JvdXBfbGFiZWwiOiJUeXBlcyBkZSBkw6lwZW5zZXMgLyByZXZlbnVzIiwiaWQiOjk2NTU4ODcsInNvdXJjZV9pZCI6IjlmZTlhZTQzLTQyM2UtNDUzZC1hNjIyLWVjYTllMDJlZjAxYyIsImxhYmVsIjoiTmV3IENhdGVnb3J5IDA2NDM5MzkxMCIsImRpcmVjdGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDFUMTM6MDY6MTYuMzQzODMwWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEzOjA2OjE2LjMzODQ4OVoiLCJpc19lZGl0YWJsZSI6dHJ1ZX0seyJncm91cF9zb3VyY2VfaWQiOiJiZDRjNDkzZi1kNGY0LTQwMzMtODUwNS04ZDk1ZDg2NDlmZGEiLCJncm91cF9sYWJlbCI6IlR5cGVzIGRlIGTDqXBlbnNlcyAvIHJldmVudXMiLCJpZCI6OTY1NTg4Niwic291cmNlX2lkIjoiOGJhYWQ5YmQtNjFhNC00NjliLWEwOGYtZjIwOTU1ZmQyNDdiIiwibGFiZWwiOiJOZXcgQ2F0ZWdvcnkgNDM4OTE0NzMxIiwiZGlyZWN0aW9uIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMzowNjoxMC42MDQxNjlaIiwidXBkYXRlZF9hdCI6IjIwMjQtMDUtMDFUMTM6MDY6MTAuNTk5ODkwWiIsImlzX2VkaXRhYmxlIjp0cnVlfSx7Imdyb3VwX3NvdXJjZV9pZCI6ImJkNGM0OTNmLWQ0ZjQtNDAzMy04NTA1LThkOTVkODY0OWZkYSIsImdyb3VwX2xhYmVsIjoiVHlwZXMgZGUgZMOpcGVuc2VzIC8gcmV2ZW51cyIsImlkIjo5NjU1ODg1LCJzb3VyY2VfaWQiOiIwZDljY2I2Yi1lZWEzLTQxMTQtYWU0OS1iODlmODNiYjc5ZTciLCJsYWJlbCI6Ik5ldyBDYXRlZ29yeSA1NzQxNjY0MzgiLCJkaXJlY3Rpb24iOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEzOjA1OjMwLjk3MzM2NFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMzowNTozMC45Njg2NjJaIiwiaXNfZWRpdGFibGUiOnRydWV9LHsiZ3JvdXBfc291cmNlX2lkIjoiYmQ0YzQ5M2YtZDRmNC00MDMzLTg1MDUtOGQ5NWQ4NjQ5ZmRhIiwiZ3JvdXBfbGFiZWwiOiJUeXBlcyBkZSBkw6lwZW5zZXMgLyByZXZlbnVzIiwiaWQiOjk2NTU4ODQsInNvdXJjZV9pZCI6ImVhZjJkYzdlLTI2NjQtNDZhZi1iYmU4LWI4MmE3YzZkYWNkOSIsImxhYmVsIjoiTmV3IENhdGVnb3J5IDU4NDEyNDE0MSIsImRpcmVjdGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDFUMTM6MDU6MjQuMDA4MDE3WiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEzOjA1OjIzLjk5ODE0MloiLCJpc19lZGl0YWJsZSI6dHJ1ZX0seyJncm91cF9zb3VyY2VfaWQiOiJiZDRjNDkzZi1kNGY0LTQwMzMtODUwNS04ZDk1ZDg2NDlmZGEiLCJncm91cF9sYWJlbCI6IlR5cGVzIGRlIGTDqXBlbnNlcyAvIHJldmVudXMiLCJpZCI6OTY1NTg4Mywic291cmNlX2lkIjoiZmMzMzVlMTctZTFjZi00Njg0LWE1MzktOWM5ODZjMjU0MjY3IiwibGFiZWwiOiJOZXcgQ2F0ZWdvcnkgMDIyNzQxNDIxIiwiZGlyZWN0aW9uIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMzowNDo0Ni43NDIzOTdaIiwidXBkYXRlZF9hdCI6IjIwMjQtMDUtMDFUMTM6MDQ6NDYuNzM3NTI1WiIsImlzX2VkaXRhYmxlIjp0cnVlfSx7Imdyb3VwX3NvdXJjZV9pZCI6ImJkNGM0OTNmLWQ0ZjQtNDAzMy04NTA1LThkOTVkODY0OWZkYSIsImdyb3VwX2xhYmVsIjoiVHlwZXMgZGUgZMOpcGVuc2VzIC8gcmV2ZW51cyIsImlkIjo5NjU1ODgyLCJzb3VyY2VfaWQiOiJhYWRhM2RmMy00OTU1LTQyMmEtOTJjMi0wOGViYjkzNTQ3YmYiLCJsYWJlbCI6Ik5ldyBDYXRlZ29yeSA3NjYxNTE3NTEiLCJkaXJlY3Rpb24iOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEzOjA0OjI1Ljg3MjM2OVoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMzowNDoyNS44Njc3MjRaIiwiaXNfZWRpdGFibGUiOnRydWV9LHsiZ3JvdXBfc291cmNlX2lkIjoiYmQ0YzQ5M2YtZDRmNC00MDMzLTg1MDUtOGQ5NWQ4NjQ5ZmRhIiwiZ3JvdXBfbGFiZWwiOiJUeXBlcyBkZSBkw6lwZW5zZXMgLyByZXZlbnVzIiwiaWQiOjk2NTU4ODEsInNvdXJjZV9pZCI6IjJkYzljMTMxLTE5NmMtNDRmOS05ZDg0LTc2OGFlNzQ2MTU2YyIsImxhYmVsIjoiTmV3IENhdGVnb3J5IDMyNjc2Nzk4NCIsImRpcmVjdGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDFUMTM6MDM6NDguMTUyODA2WiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEzOjAzOjQ4LjE0NTA1MloiLCJpc19lZGl0YWJsZSI6dHJ1ZX0seyJncm91cF9zb3VyY2VfaWQiOiJiZDRjNDkzZi1kNGY0LTQwMzMtODUwNS04ZDk1ZDg2NDlmZGEiLCJncm91cF9sYWJlbCI6IlR5cGVzIGRlIGTDqXBlbnNlcyAvIHJldmVudXMiLCJpZCI6OTY1NTgzNywic291cmNlX2lkIjoiNzQyYWU5YmQtNjY0OS00MGY1LWE0NTYtMzBhYWUwNGE2YTJhIiwibGFiZWwiOiJOZXcgQ2F0ZWdvcnkgMTE1NzUyMTM3IiwiZGlyZWN0aW9uIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMjo1NDoxNS4wNzc1MTlaIiwidXBkYXRlZF9hdCI6IjIwMjQtMDUtMTZUMDc6MTE6MDEuNDg4MTU5WiIsImlzX2VkaXRhYmxlIjp0cnVlfSx7Imdyb3VwX3NvdXJjZV9pZCI6ImJkNGM0OTNmLWQ0ZjQtNDAzMy04NTA1LThkOTVkODY0OWZkYSIsImdyb3VwX2xhYmVsIjoiVHlwZXMgZGUgZMOpcGVuc2VzIC8gcmV2ZW51cyIsImlkIjo5NjU1ODM2LCJzb3VyY2VfaWQiOiI5N2RjOTliMS0yNjEyLTRhZDQtYjUwZi05MTFhMGUwOTM1OGIiLCJsYWJlbCI6Ik5ldyBDYXRlZ29yeSA2MTQxMDM2NjAiLCJkaXJlY3Rpb24iOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEyOjUzOjQ2LjI1NjE3MVoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMjo1Mzo0Ni4yNDg5NDRaIiwiaXNfZWRpdGFibGUiOnRydWV9LHsiZ3JvdXBfc291cmNlX2lkIjoiYmQ0YzQ5M2YtZDRmNC00MDMzLTg1MDUtOGQ5NWQ4NjQ5ZmRhIiwiZ3JvdXBfbGFiZWwiOiJUeXBlcyBkZSBkw6lwZW5zZXMgLyByZXZlbnVzIiwiaWQiOjk2NTU4MzQsInNvdXJjZV9pZCI6Ijg4YmJkOWJmLWZkZGEtNGYxNS04ZDMzLTEwNTIzMDkxNzBjMCIsImxhYmVsIjoiTmV3IENhdGVnb3J5IDEzNzk3MDk3NCIsImRpcmVjdGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDFUMTI6NTI6MTUuOTUyMTUzWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEyOjUyOjE1Ljk0NDI1NFoiLCJpc19lZGl0YWJsZSI6dHJ1ZX0seyJncm91cF9zb3VyY2VfaWQiOiJiZDRjNDkzZi1kNGY0LTQwMzMtODUwNS04ZDk1ZDg2NDlmZGEiLCJncm91cF9sYWJlbCI6IlR5cGVzIGRlIGTDqXBlbnNlcyAvIHJldmVudXMiLCJpZCI6OTY1NTgyNywic291cmNlX2lkIjoiNTY3NTE2N2QtYWEwZS00MzdkLTliMjktZmU4YTc5ODYyNzRjIiwibGFiZWwiOiJOZXcgQ2F0ZWdvcnkgMTc3MzQ1MTU1IiwiZGlyZWN0aW9uIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMjo0OTozNi45NzUxNjdaIiwidXBkYXRlZF9hdCI6IjIwMjQtMDUtMDFUMTI6NDk6MzYuOTcwNDExWiIsImlzX2VkaXRhYmxlIjp0cnVlfSx7Imdyb3VwX3NvdXJjZV9pZCI6ImJkNGM0OTNmLWQ0ZjQtNDAzMy04NTA1LThkOTVkODY0OWZkYSIsImdyb3VwX2xhYmVsIjoiVHlwZXMgZGUgZMOpcGVuc2VzIC8gcmV2ZW51cyIsImlkIjo5NjU1ODI0LCJzb3VyY2VfaWQiOiI3YzdiZjAxZS1iZDIwLTQ3NmQtYjI0Mi03OWYzOWZlNzBkMTYiLCJsYWJlbCI6Ik5ldyBDYXRlZ29yeSAyMDczMDg5NzQiLCJkaXJlY3Rpb24iOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTAxVDEyOjQ4OjExLjUyNjA2NVoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wMVQxMjo0ODoxMS41MTg4NDhaIiwiaXNfZWRpdGFibGUiOnRydWV9LHsiZ3JvdXBfc291cmNlX2lkIjoiYmQ0YzQ5M2YtZDRmNC00MDMzLTg1MDUtOGQ5NWQ4NjQ5ZmRhIiwiZ3JvdXBfbGFiZWwiOiJUeXBlcyBkZSBkw6lwZW5zZXMgLyByZXZlbnVzIiwiaWQiOjk2MDc3NzEsInNvdXJjZV9pZCI6IjU2NTIyMGM4LTI3ZGEtNDdhYy05ZjY3LWRkZDdmZWYyYmFlNiIsImxhYmVsIjoiTmV3IENhdGVnb3J5IDE1OTc4MjcxMyIsImRpcmVjdGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjQtMDQtMjVUMTQ6MTM6MjMuNTUxODIxWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA0LTI1VDE0OjEzOjIzLjU0Njg0NFoiLCJpc19lZGl0YWJsZSI6dHJ1ZX0seyJncm91cF9zb3VyY2VfaWQiOiJiZDRjNDkzZi1kNGY0LTQwMzMtODUwNS04ZDk1ZDg2NDlmZGEiLCJncm91cF9sYWJlbCI6IlR5cGVzIGRlIGTDqXBlbnNlcyAvIHJldmVudXMiLCJpZCI6OTYwNzcyMSwic291cmNlX2lkIjoiNjkzNTE4YjQtZDNhMy00NWE3LWJiYWItMTA1NDA5NWYzYWJlIiwibGFiZWwiOiJOZXcgQ2F0ZWdvcnkgMTA3OTM3MzU1IiwiZGlyZWN0aW9uIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyNC0wNC0yNVQxNDoxMDowMi4zNzEzOTNaIiwidXBkYXRlZF9hdCI6IjIwMjQtMDQtMjVUMTQ6MTA6MDIuMzY2MjkzWiIsImlzX2VkaXRhYmxlIjp0cnVlfSx7Imdyb3VwX3NvdXJjZV9pZCI6ImJkNGM0OTNmLWQ0ZjQtNDAzMy04NTA1LThkOTVkODY0OWZkYSIsImdyb3VwX2xhYmVsIjoiVHlwZXMgZGUgZMOpcGVuc2VzIC8gcmV2ZW51cyIsImlkIjo5NTYxNzM4LCJzb3VyY2VfaWQiOiIyMzc3OGUwNy1mNWYzLTRjYWYtYjQ2Zi04MDk0MWVkZjZkMDUiLCJsYWJlbCI6Ik5ldyBDYXRlZ29yeSAwNjgyODIzMzIiLCJkaXJlY3Rpb24iOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI0LTA0LTIwVDE2OjQzOjMyLjIzMTgwNloiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNC0yMFQxNjo0MzozMi4yMjY1OTBaIiwiaXNfZWRpdGFibGUiOnRydWV9LHsiZ3JvdXBfc291cmNlX2lkIjoiYmQ0YzQ5M2YtZDRmNC00MDMzLTg1MDUtOGQ5NWQ4NjQ5ZmRhIiwiZ3JvdXBfbGFiZWwiOiJUeXBlcyBkZSBkw6lwZW5zZXMgLyByZXZlbnVzIiwiaWQiOjk1MTU4MzgsInNvdXJjZV9pZCI6IjJkZGFiMzdiLTVlNGYtNDY3OS1iN2EyLTE3ZTgyNzE4NGFlOCIsImxhYmVsIjoiTmV3IENhdGVnb3J5IDIyODgyNzk4MCIsImRpcmVjdGlvbiI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjQtMDQtMTVUMTQ6MDU6MzkuNTAzNTEzWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA0LTE1VDE0OjA1OjM5LjQ5OTQyM1oiLCJpc19lZGl0YWJsZSI6dHJ1ZX0seyJncm91cF9zb3VyY2VfaWQiOiJiZDRjNDkzZi1kNGY0LTQwMzMtODUwNS04ZDk1ZDg2NDlmZGEiLCJncm91cF9sYWJlbCI6IlR5cGVzIGRlIGTDqXBlbnNlcyAvIHJldmVudXMiLCJpZCI6OTUxNTc4OCwic291cmNlX2lkIjoiODkwMmU0MDgtYTA4YS00MDA5LWE5YTAtMmE1ZTBhNGY5NDIxIiwibGFiZWwiOiJOZXcgQ2F0ZWdvcnkiLCJkaXJlY3Rpb24iOm51bGwsImNyZWF0ZWRfYXQiOiIyMDI0LTA0LTE1VDE0OjA0OjI2LjE0NzQ1M1oiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNC0xNVQxNDowNDoyNi4xNDA5NjlaIiwiaXNfZWRpdGFibGUiOnRydWV9XX0=
+  recorded_at: Thu, 16 May 2024 07:54:56 GMT
+recorded_with: VCR 6.2.0

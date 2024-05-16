@@ -16,12 +16,18 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    addressable (2.8.6)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.7)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
+    crack (1.0.0)
+      bigdecimal
+      rexml
     drb (2.2.1)
+    hashdiff (1.1.0)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     json (2.7.2)
@@ -33,6 +39,7 @@ GEM
       ast (~> 2.4.1)
       racc
     power_assert (2.0.3)
+    public_suffix (5.0.5)
     racc (1.7.3)
     rainbow (3.1.1)
     rake (13.2.0)
@@ -54,10 +61,15 @@ GEM
     ruby-progressbar (1.13.0)
     test-unit (3.6.2)
       power_assert
+    timecop (0.9.8)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     vcr (6.2.0)
+    webmock (3.23.0)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   arm64-darwin-22
@@ -69,7 +81,9 @@ DEPENDENCIES
   rake (~> 13.0)
   rubocop (~> 1.21)
   test-unit (~> 3.0)
+  timecop (~> 0.9)
   vcr (~> 6.2)
+  webmock (~> 3.23)
 
 BUNDLED WITH
    2.4.10
