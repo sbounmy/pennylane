@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.pennylane.com/api/external/v1/customer_invoices/OJRX1PO8OC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - app.pennylane.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer x0dFJzrOYxeJgzEddjT1agJl1K9T4C-kpjg7qpuKyEs
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 19 May 2024 13:16:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2668'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Api-Version-Expires-At:
+      - ''
+      Etag:
+      - W/"fbc447d876e86da4525d79ad931857d6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy:
+      - 'default-src ''self''; base-uri ''self''; connect-src ''self'' https: blob:
+        https://*.screeb.app wss://*.screeb.app https://track-eu.customer.io https://*.api.gist.build
+        https://*.cloud.gist.build wss://ws-eu.pusher.com wss://*.hotjar.com wss://*.intercom.io
+        https://api.segment.io https://cdn.segment.com https://*.intercom.io https://*.eu.intercom.io
+        https://rum.browser-intake-datadoghq.com https://in.eu2.segmentapis.com https://events.eu1.segmentapis.com;
+        child-src ''self'' https://demo.arcade.software https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com https://app.datadoghq.com/
+        https://www.figma.com https://vars.hotjar.com https://insights.hotjar.com
+        https://surveys.hotjar.com https://*.githubusercontent.com https://*.google.com
+        blob: https://js.intercomcdn.com https://widget.intercom.io https://intercom-sheets.com
+        https://video-messages.intercomcdn.com https://metabase.pennylane.tech https://metabase.pennylane.com
+        https://pennylane.com https://identity.swan.io https://stage.teledec.fr https://www.teledec.fr
+        https://form.typeform.com/ https://www.youtube.com https://m.youtube.com https://content.pennylane.com
+        https://pay-sandbox.gocardless.com https://pay.gocardless.com https://js.stripe.com
+        https://hooks.stripe.com; font-src ''self'' http: https: data: blob:; frame-src
+        ''self'' https://demo.arcade.software https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com https://app.datadoghq.com/
+        https://www.figma.com https://vars.hotjar.com https://insights.hotjar.com
+        https://surveys.hotjar.com https://renderer.gist.build https://code.gist.build
+        https://*.githubusercontent.com https://*.google.com blob: https://js.intercomcdn.com
+        https://widget.intercom.io https://intercom-sheets.com https://video-messages.intercomcdn.com
+        https://metabase.pennylane.tech https://metabase.pennylane.com https://pennylane.com
+        https://identity.swan.io https://stage.teledec.fr https://www.teledec.fr https://form.typeform.com/
+        https://www.youtube.com https://m.youtube.com https://content.pennylane.com
+        https://pay-sandbox.gocardless.com https://pay.gocardless.com https://*.screeb.app
+        wss://*.screeb.app https://js.stripe.com https://hooks.stripe.com; frame-ancestors
+        ''self'' https://business.foodetective.co https://business.staging.foodtekk.com
+        https://vars.hotjar.com https://insights.hotjar.com https://surveys.hotjar.com
+        https://renderer.gist.build https://code.gist.build; img-src ''self'' https:
+        blob: data: https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com; media-src data: https://js.intercomcdn.com https://widget.intercom.io
+        https://intercom-sheets.com https://video-messages.intercomcdn.com; object-src
+        ''self'' mailto: https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com http://www.lei-france.insee.fr
+        https://www.lei-france.insee.fr https://invoice.stripe.com; script-src ''self''
+        ''strict-dynamic'' ''unsafe-eval'' ''unsafe-inline'' https: http: https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://cdn.segment.com https://www.figma.com https://script.hotjar.com https://static.hotjar.com
+        https://vars.hotjar.com https://assets.customer.io https://code.gist.build
+        https://js.intercomcdn.com https://widget.intercom.io https://intercom-sheets.com
+        https://video-messages.intercomcdn.com https://unpkg.com https://*.screeb.app
+        wss://*.screeb.app https://form.typeform.com/ https://www.youtube.com https://m.youtube.com
+        ''nonce-2nNwEaAPr8vk6FSe8WScUg==''; script-src-attr ''unsafe-inline'' ''nonce-2nNwEaAPr8vk6FSe8WScUg=='';
+        script-src-elem ''self'' ''strict-dynamic'' ''unsafe-eval'' ''unsafe-inline''
+        https: http: https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com https://cdn.segment.com https://www.figma.com
+        https://script.hotjar.com https://static.hotjar.com https://vars.hotjar.com
+        https://assets.customer.io https://code.gist.build https://js.intercomcdn.com
+        https://widget.intercom.io https://intercom-sheets.com https://video-messages.intercomcdn.com
+        https://unpkg.com https://*.screeb.app wss://*.screeb.app https://form.typeform.com/
+        https://www.youtube.com https://m.youtube.com ''nonce-2nNwEaAPr8vk6FSe8WScUg=='';
+        style-src ''self'' ''unsafe-inline'' https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css https://ka-p.fontawesome.com
+        https://fonts.googleapis.com https://www.gstatic.com https://*.typekit.net
+        https://api.pagescreen.io https://code.gist.build; style-src-elem ''self''
+        data: ''unsafe-inline'' https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css
+        https://ka-p.fontawesome.com https://fonts.googleapis.com https://www.gstatic.com
+        https://*.typekit.net https://api.pagescreen.io https://code.gist.build; worker-src
+        ''self'' blob:; report-uri https://pennylane.report-uri.com/r/d/csp/reportOnly'
+      Set-Cookie:
+      - _jeancaisse_session=4TDkwjAJ3hgwHEoVyCjIm0ttCJc%2FOh8xr5EJgTn9KkiUVl2xLjsmfAPzJul1Cfz3AWDSYZ3hSNjRvI7OdTnkym%2FXGHUbohXqRKdsLwza8VdqW0khP4PSrLqo3RUlw8A4TBBEItuND5Fj4YBuG95q%2BD0qSt%2BpZG4FERN9kNASTcgqQoQWdeoQ300%2FbA%3D%3D--CpBVyeSCHHNYFznt--ODhnNslY2kgO1SbBG4mBrw%3D%3D;
+        path=/; secure; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - 57ad709b-42e8-4d04-b5d5-04bdd3447e90
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbnZvaWNlIjp7ImFtb3VudCI6IjcwOC4wIiwiY3VycmVuY3lfYW1vdW50X2JlZm9yZV90YXgiOiI1OTAuMCIsImN1cnJlbmN5X2Ftb3VudCI6IjcwOC4wIiwiY3VycmVuY3lfdGF4IjoiMTE4LjAiLCJjdXJyZW5jeSI6IkVVUiIsImRhdGUiOiIyMDIyLTA5LTAxIiwiZGVhZGxpbmUiOiIyMDIyLTA5LTE1IiwiZGlzY291bnRfdHlwZSI6InJlbGF0aXZlIiwiZGlzY291bnQiOiIwLjAiLCJmaWxlbmFtZSI6IkZhY3R1cmUtU2FuZGJveCAtIHN0ZXBoYW5lQGhhY2tlcmhvdXNlLnBhcmlzLUYtMjAyMi0xNC5wZGYiLCJpbnZvaWNlX251bWJlciI6IkYtMjAyMi0xNCIsImxhbmd1YWdlIjoiZnJfRlIiLCJwYWlkIjpmYWxzZSwicGRmX2ludm9pY2VfZnJlZV90ZXh0IjoiIiwicGRmX2ludm9pY2Vfc3ViamVjdCI6IiIsInF1b3RlX2dyb3VwX3V1aWQiOiIyNDNhZjBmNy05MDM1LTQwOTctODQ3OC0yNGFlMDRjNmNhOGIiLCJyZW1haW5pbmdfYW1vdW50IjoiNzA4LjAiLCJzcGVjaWFsX21lbnRpb24iOiJQb3VyIGNsaWVudCBFbG9uIE11c2siLCJzdGF0dXMiOiJsYXRlIiwidXBkYXRlZF9hdCI6IjIwMjMtMDEtMTBUMTc6NDk6NTguNjE3NDgxWiIsImlkIjoiT0pSWDFQTzhPQyIsImxhYmVsIjoiRmFjdHVyZSBTdGVwaGFuZSBCb3VubXkgLSBGLTIwMjItMTQgKGxhYmVsIGfDqW7DqXLDqSkiLCJpc19kcmFmdCI6ZmFsc2UsImV4Y2hhbmdlX3JhdGUiOjEuMCwiZmlsZV91cmwiOiJodHRwczovL2FwcC5wZW5ueWxhbmUuY29tL3B1YmxpYy9pbnZvaWNlL3BkZj9lbmNyeXB0ZWRfaWQ9MGclMkI3dnRSaUI3Q0pBOFlHMVA3bGRVNWVpc2FTVWp5Qnd4MFZWM2xjcEVPWG5lbFVPUDk1OWZweDBncnVKaDl0V1BsOE1abiUyQmhHYXBQaTl0bjh6U05RJTNEJTNELS1ndGtIZDFCOFpDSFZwT1laLS1ndTR3U2ZGWSUyQmpMakR4dThrQjhuWGclM0QlM0QiLCJwdWJsaWNfdXJsIjoiaHR0cHM6Ly9hcHAucGVubnlsYW5lLmNvbS9wdWJsaWMvdmlld19pbnZvaWNlP2VuY3J5cHRlZF9pZD0zdEZ5eUFDbkVuRmNGS0VJZWpheVYwUkhUWHE5UVJoOU1Gb2F0OGhNSiUyRlJvODVRdkh4VXN6TG1xZWdMMURBMmQwYlRVMVV1ajl6S2FnNE1ZbDdOZCUyRnpVRnFTZkR3ZG9aTGpyYkxNOUNUWjN5R0RmdHN1bkZteTAwMU92Y3hwZ29Xb3BmVXRjZSUyQkRDUHdiRmxRZ1JQT0FBMzdXRzhGTjV1cSUyQm1EJTJCckJtTkN3bW9IMVltTXFKJTJGa1g3czJ6aGRDM1N0ald2VnpzMENGMlZFV3N3TjZISWxSOEdvbThMMUpwWmtOcTRxbTRHUmVudE51ZXJTWGh4Y1Z0Q0ZBMGhnMWNVR0tSVkNIUnBtc0x6dElGYVpxa0hZUzhWcktJc1JBQTRrMzh3WVZ6Nklsb29YMlpnSzRBYTBrbFdGRElTbXExNnZiSFJRZW1FQXBlVm90YkV5c1FoRzlDODUlMkJXUnF4c2hNZm9hS1R4TlJzc1VBOXRnNTBVTVczRUNTR1lTVjNzZWRQbEh4UHdCMFUxUWFYMHZYb24yRCUyQkhQcUxMTlFmNHd0dVdzJTJGVVp1ZmpNSUlvUVdGazJYaXJVNXJES0N3aUE2YlpjOWh5djlRTFZBaUZxZGNjd2ZjUjNuckVoUUlXTEN6dTZQT3clM0QlM0QtLWpUR1ZkN1pSYlhFdW96S1MtLWFqdiUyRk9SRUJYYjFGTFNBY0hsdXRvQSUzRCUzRCIsImZ1bGx5X3BhaWRfYXQiOm51bGwsImltcHV0YXRpb25fZGF0ZXMiOm51bGwsInNvdXJjZSI6ImV4dGVybmFsX2FwaV9jcmVhdGUiLCJjdXN0b21lciI6eyJzb3VyY2VfaWQiOiI0Zjc2MGQ4My01ZTc2LTQxMGQtYTk4ZC1iYzc2NzczYTg0OTIiLCJjdXN0b21lcl90eXBlIjoiaW5kaXZpZHVhbCIsIm5hbWUiOiJTdGVwaGFuZSBCb3VubXkiLCJiaWxsaW5nX2liYW4iOm51bGwsInBheW1lbnRfY29uZGl0aW9ucyI6IjMwX2RheXMiLCJyZWNpcGllbnQiOiIiLCJ1cGRhdGVkX2F0IjoiMjAyMi0wOS0xM1QxMDowNDo0MC44NjAyNzNaIiwicGhvbmUiOiIiLCJyZWZlcmVuY2UiOiIiLCJmaXJzdF9uYW1lIjoiU3RlcGhhbmUiLCJsYXN0X25hbWUiOiJCb3VubXkiLCJnZW5kZXIiOiJtaXN0ZXIiLCJlbWFpbHMiOlsic3RlcGhhbmVAaGFja2VyaG91c2UucGFyaXMiXSwiYmlsbGluZ19hZGRyZXNzIjp7ImFkZHJlc3MiOiIiLCJwb3N0YWxfY29kZSI6IiIsImNpdHkiOiIiLCJjb3VudHJ5X2FscGhhMiI6IkZSIn0sImRlbGl2ZXJ5X2FkZHJlc3MiOnsiYWRkcmVzcyI6IiIsInBvc3RhbF9jb2RlIjoiIiwiY2l0eSI6IiIsImNvdW50cnlfYWxwaGEyIjoiIn19LCJwYXltZW50cyI6W10sImxpbmVfaXRlbXNfc2VjdGlvbnNfYXR0cmlidXRlcyI6W3sicmFuayI6MSwidGl0bGUiOm51bGwsImRlc2NyaXB0aW9uIjpudWxsfV0sImxpbmVfaXRlbXMiOlt7ImlkIjoxNjcxNDYwNCwibGFiZWwiOiJGcmFpcyBkZSBzZXJ2aWNlIiwidW5pdCI6Im5vX3VuaXQiLCJxdWFudGl0eSI6IjU5MC4wIiwiYW1vdW50IjoiNzA4LjAiLCJjdXJyZW5jeV9hbW91bnQiOiI3MDguMCIsImRlc2NyaXB0aW9uIjoiIiwidmF0X3JhdGUiOiJGUl8yMDAiLCJjdXJyZW5jeV9wcmljZV9iZWZvcmVfdGF4IjoiNTkwLjAiLCJjdXJyZW5jeV90YXgiOiIxMTguMCIsInJhd19jdXJyZW5jeV91bml0X3ByaWNlIjoiMS4wIiwiZGlzY291bnRfdHlwZSI6InJlbGF0aXZlIiwiZGlzY291bnQiOiIwLjAiLCJzZWN0aW9uX3JhbmsiOjEsInByb2R1Y3RfaWQiOiJmZWUifV0sIm1hdGNoZWRfdHJhbnNhY3Rpb25zIjpbXSwidHJhbnNhY3Rpb25zX3JlZmVyZW5jZSI6bnVsbCwiY2F0ZWdvcmllcyI6W119fQ==
+  recorded_at: Sun, 19 May 2024 13:16:11 GMT
+recorded_with: VCR 6.2.0
