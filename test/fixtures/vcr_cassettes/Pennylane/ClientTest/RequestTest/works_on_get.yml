@@ -1,0 +1,165 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.pennylane.com/api/external/v1/customers
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - app.pennylane.com
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer x0dFJzrOYxeJgzEddjT1agJl1K9T4C-kpjg7qpuKyEs
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 19 May 2024 13:00:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '11819'
+      Connection:
+      - close
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Api-Version-Expires-At:
+      - ''
+      Etag:
+      - W/"7293e7b5eed47041cb98f9e5104250d1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy:
+      - 'default-src ''self''; base-uri ''self''; connect-src ''self'' https: blob:
+        https://*.screeb.app wss://*.screeb.app https://track-eu.customer.io https://*.api.gist.build
+        https://*.cloud.gist.build wss://ws-eu.pusher.com wss://*.hotjar.com wss://*.intercom.io
+        https://api.segment.io https://cdn.segment.com https://*.intercom.io https://*.eu.intercom.io
+        https://rum.browser-intake-datadoghq.com https://in.eu2.segmentapis.com https://events.eu1.segmentapis.com;
+        child-src ''self'' https://demo.arcade.software https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com https://app.datadoghq.com/
+        https://www.figma.com https://vars.hotjar.com https://insights.hotjar.com
+        https://surveys.hotjar.com https://*.githubusercontent.com https://*.google.com
+        blob: https://js.intercomcdn.com https://widget.intercom.io https://intercom-sheets.com
+        https://video-messages.intercomcdn.com https://metabase.pennylane.tech https://metabase.pennylane.com
+        https://pennylane.com https://identity.swan.io https://stage.teledec.fr https://www.teledec.fr
+        https://form.typeform.com/ https://www.youtube.com https://m.youtube.com https://content.pennylane.com
+        https://pay-sandbox.gocardless.com https://pay.gocardless.com https://js.stripe.com
+        https://hooks.stripe.com; font-src ''self'' http: https: data: blob:; frame-src
+        ''self'' https://demo.arcade.software https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com https://app.datadoghq.com/
+        https://www.figma.com https://vars.hotjar.com https://insights.hotjar.com
+        https://surveys.hotjar.com https://renderer.gist.build https://code.gist.build
+        https://*.githubusercontent.com https://*.google.com blob: https://js.intercomcdn.com
+        https://widget.intercom.io https://intercom-sheets.com https://video-messages.intercomcdn.com
+        https://metabase.pennylane.tech https://metabase.pennylane.com https://pennylane.com
+        https://identity.swan.io https://stage.teledec.fr https://www.teledec.fr https://form.typeform.com/
+        https://www.youtube.com https://m.youtube.com https://content.pennylane.com
+        https://pay-sandbox.gocardless.com https://pay.gocardless.com https://*.screeb.app
+        wss://*.screeb.app https://js.stripe.com https://hooks.stripe.com; frame-ancestors
+        ''self'' https://business.foodetective.co https://business.staging.foodtekk.com
+        https://vars.hotjar.com https://insights.hotjar.com https://surveys.hotjar.com
+        https://renderer.gist.build https://code.gist.build; img-src ''self'' https:
+        blob: data: https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com; media-src data: https://js.intercomcdn.com https://widget.intercom.io
+        https://intercom-sheets.com https://video-messages.intercomcdn.com; object-src
+        ''self'' mailto: https://jeancaisse-20190924.s3.eu-west-1.amazonaws.com http://www.lei-france.insee.fr
+        https://www.lei-france.insee.fr https://invoice.stripe.com; script-src ''self''
+        ''strict-dynamic'' ''unsafe-eval'' ''unsafe-inline'' https: http: https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://cdn.segment.com https://www.figma.com https://script.hotjar.com https://static.hotjar.com
+        https://vars.hotjar.com https://assets.customer.io https://code.gist.build
+        https://js.intercomcdn.com https://widget.intercom.io https://intercom-sheets.com
+        https://video-messages.intercomcdn.com https://unpkg.com https://*.screeb.app
+        wss://*.screeb.app https://form.typeform.com/ https://www.youtube.com https://m.youtube.com
+        ''nonce-ID0QI6CP6wq8DClf+3MQZw==''; script-src-attr ''unsafe-inline'' ''nonce-ID0QI6CP6wq8DClf+3MQZw=='';
+        script-src-elem ''self'' ''strict-dynamic'' ''unsafe-eval'' ''unsafe-inline''
+        https: http: https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com https://cdn.segment.com https://www.figma.com
+        https://script.hotjar.com https://static.hotjar.com https://vars.hotjar.com
+        https://assets.customer.io https://code.gist.build https://js.intercomcdn.com
+        https://widget.intercom.io https://intercom-sheets.com https://video-messages.intercomcdn.com
+        https://unpkg.com https://*.screeb.app wss://*.screeb.app https://form.typeform.com/
+        https://www.youtube.com https://m.youtube.com ''nonce-ID0QI6CP6wq8DClf+3MQZw=='';
+        style-src ''self'' ''unsafe-inline'' https://d1sf7nqdl8wqk.cloudfront.net
+        https://serve-cdn-assets.pennylane.workers.dev https://assets.pennylane.com
+        https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css https://ka-p.fontawesome.com
+        https://fonts.googleapis.com https://www.gstatic.com https://*.typekit.net
+        https://api.pagescreen.io https://code.gist.build; style-src-elem ''self''
+        data: ''unsafe-inline'' https://d1sf7nqdl8wqk.cloudfront.net https://serve-cdn-assets.pennylane.workers.dev
+        https://assets.pennylane.com https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css
+        https://ka-p.fontawesome.com https://fonts.googleapis.com https://www.gstatic.com
+        https://*.typekit.net https://api.pagescreen.io https://code.gist.build; worker-src
+        ''self'' blob:; report-uri https://pennylane.report-uri.com/r/d/csp/reportOnly'
+      Set-Cookie:
+      - _jeancaisse_session=47e6Aiv4lcdmDhjZj9eNKQfTP7brk%2FExl5AnuCRlK9XDschFimQGyGES5LXPzuDr7YjFvymM5mJQMnkRpngyQow%2BE%2B2%2B36Wgxww5VC2gZuUs87pdJJP2ximwX9mBYVcpMAUiRQUuS2isf%2F81qj33ThSCGJazTvWdsgyxai8kAR8%2BS0XfX%2F3R2GqDyQ%3D%3D--u4Wt4hoRcaE8MTnJ--wyHHvOI4NPYmmCKChTYHOg%3D%3D;
+        path=/; secure; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - 4dcaa4ce-0b61-4eac-bbbd-4d8d15c98317
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"total_pages":10,"current_page":1,"total_customers":186,"customers":[{"source_id":"23f1574c-a1c5-4fb5-a32a-161aa3361a49","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:55:00.263745Z","phone":"","reference":"","plan_item":{"number":"411100207","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"4301fd22-3c11-42c5-b113-5e516b6ca395","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:40:20.381488Z","phone":"","reference":"","plan_item":{"number":"411100206","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"31c4b7f3-67e2-4413-b1dd-5d20cec62131","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:39:32.562587Z","phone":"","reference":"","plan_item":{"number":"411100205","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"81580a84-1eca-48fd-9939-a1205adb80cf","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:35:15.849059Z","phone":"","reference":"","plan_item":{"number":"411100204","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"6dc4f097-812c-4eda-bcfb-a3594508147a","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:34:44.280631Z","phone":"","reference":"","plan_item":{"number":"411100203","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"c81b5f99-136c-45b1-89be-a78e9afc6d37","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:23:27.440404Z","phone":"","reference":"","plan_item":{"number":"411100202","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"dfccf566-d620-4dde-ab81-03ef95aac020","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:12:14.344507Z","phone":"","reference":"","plan_item":{"number":"411100201","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"17c49553-0caf-411b-a5b8-6bde86940e85","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:11:34.990114Z","phone":"","reference":"","plan_item":{"number":"411100199","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"df371f47-e793-4af2-9497-30d702d55be6","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:09:45.753738Z","phone":"","reference":"","plan_item":{"number":"411100198","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"5546b70e-3a68-42f3-847e-ab20222164c5","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:09:11.040460Z","phone":"","reference":"","plan_item":{"number":"411100197","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"a94af938-9b13-4423-bf24-e0a7b21a032a","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:08:33.978334Z","phone":"","reference":"","plan_item":{"number":"411100196","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"23a14460-aa31-40d7-9e26-52161e92949b","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-19T12:07:23.807680Z","phone":"","reference":"","plan_item":{"number":"411100195","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"663b7f11-1948-4a0b-a16c-ac6f9ab804b3","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-16T14:09:50.177757Z","phone":"","reference":"","plan_item":{"number":"411100194","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"3c25e80b-908e-4bd8-97c5-bd32f5b2e37e","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-16T13:48:40.542035Z","phone":"","reference":"","plan_item":{"number":"411100193","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"0fdb6327-23c0-45df-a699-ce51b9d0b1af","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-16T13:24:28.856212Z","phone":"","reference":"","plan_item":{"number":"411100192","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"305e777d-3019-4ed2-8d90-83f5939f6b24","customer_type":"company","name":"Tesla","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-16T07:11:36.396522Z","phone":"","reference":"","plan_item":{"number":"411100191","label":"Tesla","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"vat_number":"","reg_no":"","emails":[],"billing_address":{"address":"4
+        rue du faubourg","postal_code":"75008","city":"Paris","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"1965ecc4-d5b7-4d0f-aa5c-a8b2dad3700b","customer_type":"company","name":"Tesla","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-16T07:11:30.326944Z","phone":"","reference":"","plan_item":{"number":"411100189","label":"Tesla","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"vat_number":"","reg_no":"","emails":[],"billing_address":{"address":"4
+        rue du faubourg","postal_code":"75008","city":"Paris","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"9a1da2c0-c160-4bec-a9cd-518b634bf5a0","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-15T14:38:14.336530Z","phone":"","reference":"","plan_item":{"number":"411100188","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"11684c51-2281-4fcf-948f-edd416943377","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-02T15:47:56.466314Z","phone":"","reference":"","plan_item":{"number":"411100187","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}},{"source_id":"09535a30-d43e-4f5a-9169-64f3fbdf5619","customer_type":"individual","name":"John
+        Doe","billing_iban":null,"payment_conditions":"30_days","recipient":"","updated_at":"2024-05-02T15:47:12.709078Z","phone":"","reference":"","plan_item":{"number":"411100186","label":"John
+        Doe","enabled":true,"vat_rate":"any","country_alpha2":"any","description":""},"first_name":"John","last_name":"Doe","gender":null,"emails":[],"billing_address":{"address":"","postal_code":"","city":"","country_alpha2":"FR"},"delivery_address":{"address":"","postal_code":"","city":"","country_alpha2":""}}]}'
+  recorded_at: Sun, 19 May 2024 13:00:02 GMT
+recorded_with: VCR 6.2.0
